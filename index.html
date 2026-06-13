@@ -5,98 +5,113 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Suporte Tech Escolar 🖥️</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet"/>
 <style>
-/* ===== TOKENS ===== */
 :root{
-  --purple:#7C3AED;--purple-l:#A78BFA;--purple-ll:#EDE9FE;
-  --orange:#D97706;--orange-l:#F59E0B;
-  --bg:#F5F3FF;--surface:#FFFFFF;--surface2:#F0EBFD;
-  --border:#E4DCFA;--text:#1A1033;--muted:#6B5F8A;--light:#A99DC5;
-  --ok:#059669;--warn:#D97706;--err:#DC2626;
+  --p:#7C3AED;--pl:#A78BFA;--pll:#EDE9FE;--o:#D97706;--ol:#F59E0B;
+  --bg:#F5F3FF;--sur:#fff;--sur2:#F0EBFD;--bor:#E4DCFA;
+  --tx:#1A1033;--mu:#6B5F8A;--li:#A99DC5;
+  --ok:#059669;--err:#DC2626;--warn:#D97706;
   --sh:0 4px 28px rgba(124,58,237,.12);--sh2:0 12px 56px rgba(124,58,237,.22);
   --r:20px;--rs:12px;--fs:1rem;
-  --grad:linear-gradient(135deg,#7C3AED 0%,#4F46E5 55%,#D97706 140%);
+  --gr:linear-gradient(135deg,#7C3AED 0%,#4F46E5 55%,#D97706 140%);
 }
-[data-theme=dark]{--bg:#0C0818;--surface:#160F2E;--surface2:#1E1540;--border:#2E2155;--text:#F0EBFF;--muted:#B0A0D8;--light:#6A5A99;--purple-ll:#1E1540;--sh:0 4px 28px rgba(0,0,0,.5);--sh2:0 12px 56px rgba(0,0,0,.65)}
-body.hc{--bg:#000;--surface:#111;--surface2:#1a1a1a;--border:#ff0;--text:#fff;--muted:#ff9;--light:#ccc;--purple:#ff0;--purple-l:#ff6;--orange:#fa0;--purple-ll:#1a1a00}
-body.fs-lg{--fs:1.14rem}body.fs-xl{--fs:1.3rem}
-
+[data-theme=dark]{--bg:#0C0818;--sur:#160F2E;--sur2:#1E1540;--bor:#2E2155;--tx:#F0EBFF;--mu:#B0A0D8;--li:#6A5A99;--pll:#1E1540;--sh:0 4px 28px rgba(0,0,0,.5);--sh2:0 12px 56px rgba(0,0,0,.65)}
+body.hc{--bg:#000;--sur:#111;--sur2:#1a1a1a;--bor:#ff0;--tx:#fff;--mu:#ff9;--li:#ccc;--p:#ff0;--pl:#ff6;--o:#fa0;--pll:#1a1a00}
+body.fs-lg{--fs:1.14rem} body.fs-xl{--fs:1.3rem}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:'DM Sans',sans-serif;font-size:var(--fs);background:var(--bg);color:var(--text);line-height:1.7;transition:background .3s,color .3s;min-height:100vh;overflow-x:hidden}
-::-webkit-scrollbar{width:7px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--purple-l);border-radius:99px}
+body{font-family:'DM Sans',sans-serif;font-size:var(--fs);background:var(--bg);color:var(--tx);line-height:1.7;transition:background .3s,color .3s;min-height:100vh;overflow-x:hidden}
+::-webkit-scrollbar{width:7px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--pl);border-radius:99px}
 
-/* ===== HEADER ===== */
-header{position:sticky;top:0;z-index:120;background:var(--surface);border-bottom:1px solid var(--border);backdrop-filter:blur(20px);padding:0 1.8rem;display:flex;align-items:center;justify-content:space-between;height:64px;box-shadow:var(--sh)}
-.logo{display:flex;align-items:center;gap:10px;font-family:'Sora',sans-serif;font-weight:800;font-size:1.1rem;color:var(--text);text-decoration:none}
-.logo-icon{width:38px;height:38px;border-radius:11px;background:var(--grad);display:flex;align-items:center;justify-content:center;font-size:1.25rem;flex-shrink:0}
-.logo em{font-style:normal;color:var(--purple)}
-.hactions{display:flex;align-items:center;gap:8px}
-.ibtn{width:40px;height:40px;border-radius:10px;border:1.5px solid var(--border);background:var(--surface2);color:var(--text);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.05rem;transition:all .2s}
-.ibtn:hover{background:var(--purple-ll);border-color:var(--purple-l);transform:scale(1.06)}
-.ibtn:focus{outline:3px solid var(--orange);outline-offset:2px}
+/* HEADER */
+header{position:sticky;top:0;z-index:120;background:var(--sur);border-bottom:1px solid var(--bor);backdrop-filter:blur(20px);padding:0 1.8rem;display:flex;align-items:center;justify-content:space-between;height:64px;box-shadow:var(--sh)}
+.logo{display:flex;align-items:center;gap:10px;font-family:'Sora',sans-serif;font-weight:800;font-size:1.1rem;color:var(--tx);text-decoration:none}
+.logo-icon{width:38px;height:38px;border-radius:11px;background:var(--gr);display:flex;align-items:center;justify-content:center;font-size:1.25rem;flex-shrink:0}
+.logo em{font-style:normal;color:var(--p)}
+.hact{display:flex;align-items:center;gap:8px}
+.ibtn{width:40px;height:40px;border-radius:10px;border:1.5px solid var(--bor);background:var(--sur2);color:var(--tx);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.05rem;transition:all .2s}
+.ibtn:hover{background:var(--pll);border-color:var(--pl);transform:scale(1.06)}
+.ibtn:focus{outline:3px solid var(--o);outline-offset:2px}
 
-/* ===== A11Y PANEL ===== */
-.a11y-panel{position:fixed;top:74px;right:1.4rem;z-index:300;background:var(--surface);border:1.5px solid var(--border);border-radius:var(--r);padding:1.2rem 1.3rem;box-shadow:var(--sh2);min-width:240px;display:none;animation:fds .22s ease}
+/* A11Y */
+.a11y-panel{position:fixed;top:74px;right:1.4rem;z-index:300;background:var(--sur);border:1.5px solid var(--bor);border-radius:var(--r);padding:1.2rem 1.3rem;box-shadow:var(--sh2);min-width:240px;display:none;animation:fds .22s ease}
 .a11y-panel.open{display:block}
 @keyframes fds{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}
-.a11y-panel h3{font-family:'Sora',sans-serif;font-size:.78rem;font-weight:700;color:var(--light);text-transform:uppercase;letter-spacing:.08em;margin-bottom:1rem}
+.a11y-panel h3{font-family:'Sora',sans-serif;font-size:.78rem;font-weight:700;color:var(--li);text-transform:uppercase;letter-spacing:.08em;margin-bottom:1rem}
 .arow{display:flex;align-items:center;justify-content:space-between;margin-bottom:.7rem;font-size:.9rem}
 .abtns{display:flex;gap:5px}
-.abtns button{padding:4px 9px;border-radius:7px;border:1.5px solid var(--border);background:var(--surface2);color:var(--text);cursor:pointer;font-size:.82rem;font-weight:600;transition:all .18s}
-.abtns button:hover,.abtns button.on{background:var(--purple);color:#fff;border-color:var(--purple)}
-.tog{width:44px;height:24px;background:var(--border);border-radius:99px;border:none;cursor:pointer;position:relative;transition:background .2s}
+.abtns button{padding:4px 9px;border-radius:7px;border:1.5px solid var(--bor);background:var(--sur2);color:var(--tx);cursor:pointer;font-size:.82rem;font-weight:600;transition:all .18s}
+.abtns button:hover,.abtns button.on{background:var(--p);color:#fff;border-color:var(--p)}
+.tog{width:44px;height:24px;background:var(--bor);border-radius:99px;border:none;cursor:pointer;position:relative;transition:background .2s}
 .tog::after{content:'';position:absolute;width:18px;height:18px;background:#fff;border-radius:50%;top:3px;left:3px;transition:left .2s}
-.tog.on{background:var(--purple)}.tog.on::after{left:23px}
+.tog.on{background:var(--p)}.tog.on::after{left:23px}
 
-/* ===== HERO ===== */
-.hero{background:var(--surface);border-bottom:1px solid var(--border);padding:3.5rem 1.5rem 2.5rem;text-align:center;position:relative;overflow:hidden}
+/* HERO */
+.hero{background:var(--sur);border-bottom:1px solid var(--bor);padding:3.5rem 1.5rem 2.5rem;text-align:center;position:relative;overflow:hidden}
 .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% -10%,rgba(124,58,237,.13) 0%,transparent 70%);pointer-events:none}
-.hero-badge{display:inline-flex;align-items:center;gap:6px;background:var(--purple-ll);border:1px solid var(--border);color:var(--purple);font-family:'Sora',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:4px 13px;border-radius:99px;margin-bottom:1.1rem}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;background:var(--pll);border:1px solid var(--bor);color:var(--p);font-family:'Sora',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:4px 13px;border-radius:99px;margin-bottom:1.1rem}
 .hero h1{font-family:'Sora',sans-serif;font-size:clamp(1.7rem,5vw,2.6rem);font-weight:800;line-height:1.2;margin-bottom:.8rem}
-.hero h1 .hl{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.hero-sub{font-size:.98rem;color:var(--muted);max-width:480px;margin:0 auto 2rem}
+.hero h1 .hl{background:var(--gr);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{font-size:.98rem;color:var(--mu);max-width:480px;margin:0 auto 2rem}
 
-/* ===== SEARCH ===== */
+/* SEARCH */
 .search-outer{position:relative;max-width:560px;margin:0 auto}
-.search-bar{display:flex;align-items:center;background:var(--surface);border:2px solid var(--border);border-radius:99px;padding:.15rem .15rem .15rem 1.3rem;box-shadow:var(--sh);transition:border-color .2s,box-shadow .2s}
-.search-bar:focus-within{border-color:var(--purple-l);box-shadow:0 0 0 5px rgba(124,58,237,.13),var(--sh)}
-.search-bar .si{font-size:1.1rem;flex-shrink:0;margin-right:.4rem;color:var(--light)}
-.search-bar input{flex:1;border:none;background:transparent;color:var(--text);font-size:1rem;font-family:'DM Sans',sans-serif;outline:none;padding:.65rem 0}
-.search-bar input::placeholder{color:var(--light)}
-.search-bar .sbtn{background:var(--grad);color:#fff;border:none;border-radius:99px;padding:.6rem 1.3rem;font-family:'Sora',sans-serif;font-weight:700;font-size:.88rem;cursor:pointer;transition:opacity .2s,transform .2s;white-space:nowrap;flex-shrink:0}
-.search-bar .sbtn:hover{opacity:.88;transform:scale(1.03)}
-.suggestions{position:absolute;top:calc(100% + 10px);left:0;right:0;z-index:200;background:var(--surface);border:1.5px solid var(--border);border-radius:var(--r);box-shadow:var(--sh2);overflow:hidden;display:none;animation:fds .18s ease}
-.suggestions.open{display:block}
-.sug-item{display:flex;align-items:center;gap:12px;padding:.85rem 1.2rem;cursor:pointer;transition:background .15s;border-bottom:1px solid var(--border)}
+.search-bar{display:flex;align-items:center;background:var(--sur);border:2px solid var(--bor);border-radius:99px;padding:.15rem .15rem .15rem 1.3rem;box-shadow:var(--sh);transition:border-color .2s,box-shadow .2s}
+.search-bar:focus-within{border-color:var(--pl);box-shadow:0 0 0 5px rgba(124,58,237,.13)}
+.search-bar .si{font-size:1.1rem;flex-shrink:0;margin-right:.4rem;color:var(--li)}
+.search-bar input{flex:1;border:none;background:transparent;color:var(--tx);font-size:1rem;font-family:'DM Sans',sans-serif;outline:none;padding:.65rem 0}
+.search-bar input::placeholder{color:var(--li)}
+.search-bar .sbtn{background:var(--gr);color:#fff;border:none;border-radius:99px;padding:.6rem 1.3rem;font-family:'Sora',sans-serif;font-weight:700;font-size:.88rem;cursor:pointer;transition:opacity .2s;white-space:nowrap;flex-shrink:0}
+.search-bar .sbtn:hover{opacity:.88}
+.sugs{position:absolute;top:calc(100% + 10px);left:0;right:0;z-index:200;background:var(--sur);border:1.5px solid var(--bor);border-radius:var(--r);box-shadow:var(--sh2);overflow:hidden;display:none;animation:fds .18s ease}
+.sugs.open{display:block}
+.sug-item{display:flex;align-items:center;gap:12px;padding:.85rem 1.2rem;cursor:pointer;transition:background .15s;border-bottom:1px solid var(--bor)}
 .sug-item:last-child{border-bottom:none}
-.sug-item:hover{background:var(--purple-ll)}
+.sug-item:hover{background:var(--pll)}
 .sug-emoji{font-size:1.4rem;flex-shrink:0}
-.sug-text strong{display:block;font-size:.92rem;font-weight:600;color:var(--text)}
-.sug-text span{font-size:.8rem;color:var(--muted)}
-.sug-arrow{margin-left:auto;color:var(--purple-l)}
-.result-count{text-align:center;margin-top:1rem;font-size:.83rem;color:var(--muted);min-height:1.2rem}
-.result-count strong{color:var(--purple);font-weight:700}
-.quick-tags{display:flex;flex-wrap:wrap;gap:7px;justify-content:center;margin-top:1.1rem}
-.qtag{display:inline-flex;align-items:center;gap:5px;padding:5px 13px;border-radius:99px;border:1.5px solid var(--border);background:var(--surface2);color:var(--muted);font-size:.8rem;font-weight:500;cursor:pointer;transition:all .18s}
-.qtag:hover{background:var(--purple-ll);border-color:var(--purple-l);color:var(--purple)}
+.sug-text strong{display:block;font-size:.92rem;font-weight:600;color:var(--tx)}
+.sug-text span{font-size:.8rem;color:var(--mu)}
+.sug-arrow{margin-left:auto;color:var(--pl)}
 
-/* ===== MAIN ===== */
+/* AI BANNER */
+.ai-banner{background:var(--pll);border:1.5px solid var(--bor);border-radius:var(--r);padding:1rem 1.3rem;margin-top:1rem;display:none;animation:fds .25s ease;text-align:left;max-width:560px;margin-left:auto;margin-right:auto}
+.ai-banner.show{display:block}
+.ai-banner-head{display:flex;align-items:center;gap:8px;margin-bottom:.4rem;font-family:'Sora',sans-serif;font-size:.78rem;font-weight:700;color:var(--p);text-transform:uppercase;letter-spacing:.06em}
+.ai-banner p{font-size:.88rem;color:var(--tx);line-height:1.6}
+.ai-banner-btn{display:inline-flex;align-items:center;gap:6px;margin-top:.7rem;background:var(--gr);color:#fff;border:none;border-radius:99px;padding:.5rem 1.1rem;font-family:'Sora',sans-serif;font-weight:700;font-size:.82rem;cursor:pointer}
+.ai-banner-btn:hover{opacity:.88}
+.rc{text-align:center;margin-top:1rem;font-size:.83rem;color:var(--mu);min-height:1.2rem}
+.rc strong{color:var(--p);font-weight:700}
+.qtags{display:flex;flex-wrap:wrap;gap:7px;justify-content:center;margin-top:1.1rem}
+.qtag{display:inline-flex;align-items:center;gap:5px;padding:5px 13px;border-radius:99px;border:1.5px solid var(--bor);background:var(--sur2);color:var(--mu);font-size:.8rem;font-weight:500;cursor:pointer;transition:all .18s}
+.qtag:hover{background:var(--pll);border-color:var(--pl);color:var(--p)}
+
+/* MAIN */
 main{max-width:920px;margin:0 auto;padding:2.5rem 1.5rem 5rem}
-.cat-filter{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:1.5rem}
-.cfbtn{display:inline-flex;align-items:center;gap:6px;padding:7px 16px;border-radius:99px;border:1.5px solid var(--border);background:var(--surface);color:var(--muted);font-size:.83rem;font-weight:600;cursor:pointer;transition:all .18s;font-family:'DM Sans',sans-serif}
-.cfbtn:hover{border-color:var(--purple-l);color:var(--purple);background:var(--purple-ll)}
-.cfbtn.active{background:var(--purple);color:#fff;border-color:var(--purple);box-shadow:0 2px 12px rgba(124,58,237,.3)}
-.cf-count{font-size:.72rem;background:rgba(255,255,255,.25);padding:1px 7px;border-radius:99px;font-weight:700}
-.cfbtn:not(.active) .cf-count{background:var(--surface2);color:var(--light)}
-.slabel{font-family:'Sora',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--light);margin:0 0 1.2rem;display:flex;align-items:center;gap:8px}
-.slabel::after{content:'';flex:1;height:1px;background:var(--border)}
 
-/* ===== SKELETON ===== */
+/* RECENTLY VIEWED */
+.rec-sec{margin-bottom:2rem;display:none}
+.rec-sec.show{display:block}
+.rec-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:.8rem}
+.rec-chip{display:inline-flex;align-items:center;gap:7px;padding:.5rem 1rem;border-radius:99px;background:var(--sur);border:1.5px solid var(--bor);color:var(--tx);font-size:.83rem;font-weight:500;cursor:pointer;transition:all .18s}
+.rec-chip:hover{background:var(--pll);border-color:var(--pl)}
+.rc-check{font-size:.75rem;background:rgba(5,150,105,.12);color:var(--ok);border-radius:99px;padding:1px 6px;font-weight:700}
+
+/* CATEGORY FILTER */
+.cat-filter{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:1.5rem}
+.cfbtn{display:inline-flex;align-items:center;gap:6px;padding:7px 16px;border-radius:99px;border:1.5px solid var(--bor);background:var(--sur);color:var(--mu);font-size:.83rem;font-weight:600;cursor:pointer;transition:all .18s;font-family:'DM Sans',sans-serif}
+.cfbtn:hover{border-color:var(--pl);color:var(--p);background:var(--pll)}
+.cfbtn.active{background:var(--p);color:#fff;border-color:var(--p);box-shadow:0 2px 12px rgba(124,58,237,.3)}
+.cf-count{font-size:.72rem;background:rgba(255,255,255,.25);padding:1px 7px;border-radius:99px;font-weight:700}
+.cfbtn:not(.active) .cf-count{background:var(--sur2);color:var(--li)}
+.slabel{font-family:'Sora',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--li);margin:0 0 1.2rem;display:flex;align-items:center;gap:8px}
+.slabel::after{content:'';flex:1;height:1px;background:var(--bor)}
+
+/* SKELETON */
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:1.2rem}
-.skeleton{background:var(--surface);border:1.5px solid var(--border);border-radius:var(--r);padding:1.7rem 1.5rem 2.4rem;pointer-events:none}
-.skel-line{border-radius:6px;background:linear-gradient(90deg,var(--surface2) 25%,var(--border) 50%,var(--surface2) 75%);background-size:200% 100%;animation:shimmer 1.4s infinite}
+.skeleton{background:var(--sur);border:1.5px solid var(--bor);border-radius:var(--r);padding:1.7rem 1.5rem 2.4rem;pointer-events:none}
+.skel-line{border-radius:6px;background:linear-gradient(90deg,var(--sur2) 25%,var(--bor) 50%,var(--sur2) 75%);background-size:200% 100%;animation:shimmer 1.4s infinite}
 @keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
 .skel-emoji{width:48px;height:48px;border-radius:10px;margin-bottom:.9rem}
 .skel-tag{width:100px;height:18px;margin-bottom:.7rem}
@@ -104,189 +119,220 @@ main{max-width:920px;margin:0 auto;padding:2.5rem 1.5rem 5rem}
 .skel-desc{width:95%;height:14px;margin-bottom:.35rem}
 .skel-desc2{width:70%;height:14px}
 
-/* ===== CARDS ===== */
+/* CARDS */
 @keyframes cardIn{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
-.card{background:var(--surface);border:1.5px solid var(--border);border-radius:var(--r);padding:1.7rem 1.5rem 2.4rem;cursor:pointer;transition:transform .25s cubic-bezier(.34,1.56,.64,1),box-shadow .25s,border-color .25s;position:relative;overflow:hidden;text-align:left;opacity:0;animation:cardIn .5s ease forwards}
+.card{background:var(--sur);border:1.5px solid var(--bor);border-radius:var(--r);padding:1.7rem 1.5rem 2.4rem;cursor:pointer;transition:transform .25s cubic-bezier(.34,1.56,.64,1),box-shadow .25s,border-color .25s;position:relative;overflow:hidden;text-align:left;opacity:0;animation:cardIn .5s ease forwards}
 .card:nth-child(1){animation-delay:.05s}.card:nth-child(2){animation-delay:.14s}.card:nth-child(3){animation-delay:.23s}
-.card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--grad);opacity:0;transition:opacity .2s}
-.card:hover{transform:translateY(-5px);box-shadow:var(--sh2);border-color:var(--purple-l)}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--gr);opacity:0;transition:opacity .2s}
+.card:hover{transform:translateY(-5px);box-shadow:var(--sh2);border-color:var(--pl)}
 .card:hover::before{opacity:1}
-.card:focus{outline:3px solid var(--orange);outline-offset:3px}
+.card:focus{outline:3px solid var(--o);outline-offset:3px}
 .card.hidden{display:none}
 .card.just-solved{border-color:var(--ok);box-shadow:0 0 0 3px rgba(5,150,105,.18)}
 .solved-badge{position:absolute;top:1rem;right:1rem;background:rgba(5,150,105,.12);color:var(--ok);border:1.5px solid rgba(5,150,105,.3);border-radius:99px;font-size:.72rem;font-weight:700;padding:2px 9px;display:none;align-items:center;gap:4px}
 .card.just-solved .solved-badge{display:flex}.card.just-solved .carrow{display:none}
-
-/* SVG illustration bg */
 .card-illus{position:absolute;bottom:-10px;right:-10px;width:90px;height:90px;opacity:.06;pointer-events:none;transition:opacity .2s}
 .card:hover .card-illus{opacity:.1}
-
 .cemoji{font-size:2.5rem;display:block;margin-bottom:.9rem}
-.ctag{display:inline-flex;align-items:center;gap:4px;font-size:.7rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--orange);background:rgba(217,119,6,.1);padding:2px 9px;border-radius:99px;margin-bottom:.55rem}
-.card h2{font-family:'Sora',sans-serif;font-size:1.05rem;font-weight:700;color:var(--text);margin-bottom:.45rem;line-height:1.3}
-.card p{font-size:.87rem;color:var(--muted);line-height:1.6}
-.carrow{position:absolute;bottom:1.2rem;right:1.2rem;width:32px;height:32px;border-radius:8px;background:var(--purple-ll);display:flex;align-items:center;justify-content:center;color:var(--purple);transition:all .2s}
-.card:hover .carrow{background:var(--purple);color:#fff;transform:translate(2px,-2px)}
-
-.no-res{text-align:center;padding:3rem 1rem;color:var(--muted);display:none}
+.ctag{display:inline-flex;align-items:center;gap:4px;font-size:.7rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--o);background:rgba(217,119,6,.1);padding:2px 9px;border-radius:99px;margin-bottom:.55rem}
+.card h2{font-family:'Sora',sans-serif;font-size:1.05rem;font-weight:700;color:var(--tx);margin-bottom:.45rem;line-height:1.3}
+.card p{font-size:.87rem;color:var(--mu);line-height:1.6}
+.carrow{position:absolute;bottom:1.2rem;right:1.2rem;width:32px;height:32px;border-radius:8px;background:var(--pll);display:flex;align-items:center;justify-content:center;color:var(--p);transition:all .2s}
+.card:hover .carrow{background:var(--p);color:#fff;transform:translate(2px,-2px)}
+.no-res{text-align:center;padding:3rem 1rem;color:var(--mu);display:none}
 .no-res.show{display:block}
 .no-res .ne{font-size:2.8rem;margin-bottom:.7rem}
 
-/* ===== BACK TO TOP ===== */
-.btt{position:fixed;bottom:2rem;right:1.5rem;z-index:150;width:44px;height:44px;border-radius:50%;background:var(--grad);color:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.1rem;box-shadow:0 4px 16px rgba(124,58,237,.4);opacity:0;transform:translateY(12px);transition:opacity .3s,transform .3s;pointer-events:none}
+/* BACK TO TOP */
+.btt{position:fixed;bottom:6rem;right:1.5rem;z-index:150;width:44px;height:44px;border-radius:50%;background:var(--gr);color:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.1rem;box-shadow:0 4px 16px rgba(124,58,237,.4);opacity:0;transform:translateY(12px);transition:opacity .3s,transform .3s;pointer-events:none}
 .btt.show{opacity:1;transform:translateY(0);pointer-events:auto}
-.btt:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(124,58,237,.5)}
+.btt:hover{transform:translateY(-3px)}
 
-/* ===== TOAST ===== */
+/* TOAST */
 .toast-wrap{position:fixed;bottom:5rem;left:50%;transform:translateX(-50%);z-index:500;display:flex;flex-direction:column;align-items:center;gap:8px;pointer-events:none}
-.toast{background:var(--surface);border:1.5px solid var(--border);border-radius:99px;padding:.55rem 1.2rem;font-size:.85rem;font-weight:600;color:var(--text);box-shadow:var(--sh2);display:flex;align-items:center;gap:8px;animation:toastIn .3s cubic-bezier(.34,1.56,.64,1) forwards;white-space:nowrap}
-.toast.out{animation:toastOut .3s ease forwards}
-@keyframes toastIn{from{opacity:0;transform:translateY(14px) scale(.95)}to{opacity:1;transform:translateY(0) scale(1)}}
-@keyframes toastOut{from{opacity:1;transform:translateY(0)}to{opacity:0;transform:translateY(-8px)}}
+.toast{background:var(--sur);border:1.5px solid var(--bor);border-radius:99px;padding:.55rem 1.2rem;font-size:.85rem;font-weight:600;color:var(--tx);box-shadow:var(--sh2);display:flex;align-items:center;gap:8px;animation:tIn .3s cubic-bezier(.34,1.56,.64,1) forwards;white-space:nowrap}
+.toast.out{animation:tOut .3s ease forwards}
+@keyframes tIn{from{opacity:0;transform:translateY(14px) scale(.95)}to{opacity:1;transform:none}}
+@keyframes tOut{from{opacity:1}to{opacity:0;transform:translateY(-8px)}}
 
-/* ===== MODAL ===== */
+/* MODAL */
 .overlay{position:fixed;inset:0;background:rgba(8,4,24,.7);z-index:400;display:none;align-items:flex-start;justify-content:center;padding:1.5rem;overflow-y:auto;backdrop-filter:blur(5px)}
 .overlay.open{display:flex;animation:fi .2s ease}
 @keyframes fi{from{opacity:0}to{opacity:1}}
-.modal{background:var(--surface);border:1.5px solid var(--border);border-radius:24px;width:100%;max-width:650px;margin:auto;box-shadow:var(--sh2);overflow:hidden;animation:su .28s cubic-bezier(.34,1.56,.64,1)}
+.modal{background:var(--sur);border:1.5px solid var(--bor);border-radius:24px;width:100%;max-width:650px;margin:auto;box-shadow:var(--sh2);overflow:hidden;animation:su .28s cubic-bezier(.34,1.56,.64,1)}
 @keyframes su{from{opacity:0;transform:translateY(28px) scale(.97)}to{opacity:1;transform:none}}
-.mhead{background:var(--grad);padding:1.8rem 2rem;position:relative}
+.mhead{background:var(--gr);padding:1.8rem 2rem;position:relative}
 .mhead .me{font-size:2.8rem;display:block;margin-bottom:.5rem}
 .mhead h2{font-family:'Sora',sans-serif;font-size:1.28rem;font-weight:800;color:#fff;line-height:1.3}
 .mhead p{color:rgba(255,255,255,.75);font-size:.88rem;margin-top:.3rem}
 .mclose{position:absolute;top:1.1rem;right:1.1rem;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.2);border:none;color:#fff;font-size:1.05rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s}
 .mclose:hover{background:rgba(255,255,255,.35)}
-.mclose:focus{outline:3px solid #fff;outline-offset:2px}
-
-/* Print btn in modal */
-.mhead-actions{position:absolute;top:1.1rem;right:3.5rem;display:flex;gap:6px}
+.mhead-acts{position:absolute;top:1.1rem;right:3.5rem;display:flex;gap:6px}
 .print-btn{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.2);border:none;color:#fff;font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s}
 .print-btn:hover{background:rgba(255,255,255,.35)}
 
-/* ===== PROGRESS ===== */
-.progress-wrap{background:var(--surface2);border-bottom:1px solid var(--border);padding:1rem 2rem}
-.prog-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:.55rem}
-.prog-label{font-family:'Sora',sans-serif;font-size:.78rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
-.prog-counter{font-family:'Sora',sans-serif;font-size:.78rem;font-weight:700;color:var(--purple)}
-.prog-track{height:6px;background:var(--border);border-radius:99px;overflow:hidden}
-.prog-fill{height:100%;background:var(--grad);border-radius:99px;transition:width .4s cubic-bezier(.4,0,.2,1)}
-.prog-steps{display:flex;gap:6px;margin-top:.6rem;flex-wrap:wrap}
-.prog-dot{width:28px;height:28px;border-radius:8px;background:var(--surface2);border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:700;color:var(--light);transition:all .2s;font-family:'Sora',sans-serif}
-.prog-dot.done{background:var(--purple);border-color:var(--purple);color:#fff}
-.prog-dot.current{border-color:var(--orange);color:var(--orange);background:rgba(217,119,6,.08)}
+/* PROGRESS */
+.prog-wrap{background:var(--sur2);border-bottom:1px solid var(--bor);padding:1rem 2rem}
+.prog-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:.55rem}
+.prog-label{font-family:'Sora',sans-serif;font-size:.78rem;font-weight:700;color:var(--mu);text-transform:uppercase;letter-spacing:.06em}
+.prog-cnt{font-family:'Sora',sans-serif;font-size:.78rem;font-weight:700;color:var(--p)}
+.prog-track{height:6px;background:var(--bor);border-radius:99px;overflow:hidden}
+.prog-fill{height:100%;background:var(--gr);border-radius:99px;transition:width .4s cubic-bezier(.4,0,.2,1)}
+.prog-dots{display:flex;gap:6px;margin-top:.6rem;flex-wrap:wrap}
+.prog-dot{width:28px;height:28px;border-radius:8px;background:var(--sur2);border:1.5px solid var(--bor);display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:700;color:var(--li);transition:all .2s;font-family:'Sora',sans-serif}
+.prog-dot.done{background:var(--p);border-color:var(--p);color:#fff}
+.prog-dot.cur{border-color:var(--o);color:var(--o)}
 .mbody{padding:1.8rem 2rem}
 
-/* ===== STEPS ===== */
+/* STEPS */
 .sg{margin-bottom:1.8rem}
-.sgt{font-family:'Sora',sans-serif;font-size:.92rem;font-weight:700;color:var(--purple);margin-bottom:.9rem;display:flex;align-items:center;gap:7px}
+.sgt{font-family:'Sora',sans-serif;font-size:.92rem;font-weight:700;color:var(--p);margin-bottom:.9rem;display:flex;align-items:center;gap:7px}
 .step{display:flex;gap:.9rem;margin-bottom:1.1rem;align-items:flex-start;cursor:pointer;border-radius:var(--rs);padding:.5rem;margin-left:-.5rem;transition:background .15s}
-.step:hover{background:var(--surface2)}
+.step:hover{background:var(--sur2)}
 .step.checked .snum{background:linear-gradient(135deg,var(--ok),#34D399)!important}
 .step.checked .sc strong{text-decoration:line-through;opacity:.55}
-.snum{flex-shrink:0;width:33px;height:33px;border-radius:9px;background:var(--grad);color:#fff;font-family:'Sora',sans-serif;font-weight:800;font-size:.82rem;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(124,58,237,.3);transition:background .3s}
-.sc{flex:1}.sc strong{display:block;font-weight:600;color:var(--text);margin-bottom:.15rem;transition:all .2s}.sc p{font-size:.91rem;color:var(--muted);line-height:1.6}
+.snum{flex-shrink:0;width:33px;height:33px;border-radius:9px;background:var(--gr);color:#fff;font-family:'Sora',sans-serif;font-weight:800;font-size:.82rem;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(124,58,237,.3);transition:background .3s}
+.sc{flex:1}.sc strong{display:block;font-weight:600;color:var(--tx);margin-bottom:.15rem;transition:all .2s}.sc p{font-size:.91rem;color:var(--mu);line-height:1.6}
 
-/* ===== CALLOUTS ===== */
+/* CALLOUTS */
 .cl{border-radius:var(--rs);padding:.95rem 1.15rem;margin:1.1rem 0;display:flex;gap:9px;align-items:flex-start;font-size:.91rem;line-height:1.6}
 .ci{font-size:1.25rem;flex-shrink:0;margin-top:1px}
 .cl.ok{background:rgba(5,150,105,.1);border:1.5px solid rgba(5,150,105,.3)}
 .cl.warn{background:rgba(217,119,6,.1);border:1.5px solid rgba(217,119,6,.3)}
 .cl.err{background:rgba(220,38,38,.1);border:1.5px solid rgba(220,38,38,.3)}
-.cl.info{background:var(--purple-ll);border:1.5px solid var(--border)}
-.summ{background:var(--surface2);border-radius:var(--rs);padding:1.15rem 1.35rem;margin-top:1.4rem}
-.summ h4{font-family:'Sora',sans-serif;font-size:.82rem;font-weight:700;color:var(--light);text-transform:uppercase;letter-spacing:.07em;margin-bottom:.75rem}
+.cl.info{background:var(--pll);border:1.5px solid var(--bor)}
+.summ{background:var(--sur2);border-radius:var(--rs);padding:1.15rem 1.35rem;margin-top:1.4rem}
+.summ h4{font-family:'Sora',sans-serif;font-size:.82rem;font-weight:700;color:var(--li);text-transform:uppercase;letter-spacing:.07em;margin-bottom:.75rem}
 .srow{display:flex;gap:9px;align-items:flex-start;margin-bottom:.5rem;font-size:.9rem}
-.nn{display:inline-block;background:var(--grad);color:#fff;font-family:'Sora',sans-serif;font-weight:700;font-size:.88rem;padding:2px 11px;border-radius:6px;letter-spacing:.04em}
+.nn{display:inline-block;background:var(--gr);color:#fff;font-family:'Sora',sans-serif;font-weight:700;font-size:.88rem;padding:2px 11px;border-radius:6px;letter-spacing:.04em}
 
-/* ===== NOT RESOLVED ===== */
-.not-resolved{margin-top:2rem;border-radius:var(--r);border:1.5px solid var(--border);overflow:hidden}
-.nr-header{background:var(--surface2);padding:1rem 1.3rem;display:flex;align-items:center;gap:10px}
-.nr-header span{font-family:'Sora',sans-serif;font-weight:700;font-size:.9rem;color:var(--text)}
+/* RATING */
+.rating-wrap{margin-top:1.5rem;border-top:1px solid var(--bor);padding-top:1.3rem;text-align:center}
+.rating-wrap p{font-size:.88rem;color:var(--mu);margin-bottom:.7rem;font-weight:500}
+.rating-btns{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.rbtn{display:inline-flex;align-items:center;gap:6px;padding:.5rem 1.1rem;border-radius:99px;border:1.5px solid var(--bor);background:var(--sur2);color:var(--tx);font-size:.85rem;font-weight:600;cursor:pointer;transition:all .2s;font-family:'DM Sans',sans-serif}
+.rbtn:hover{transform:scale(1.06)}
+.rbtn.bad:hover,.rbtn.bad.sel{background:rgba(220,38,38,.1);border-color:var(--err);color:var(--err)}
+.rbtn.mid:hover,.rbtn.mid.sel{background:rgba(217,119,6,.1);border-color:var(--warn);color:var(--warn)}
+.rbtn.good:hover,.rbtn.good.sel{background:rgba(5,150,105,.1);border-color:var(--ok);color:var(--ok)}
+.rating-fb{font-size:.82rem;color:var(--mu);margin-top:.6rem;min-height:1.1rem;font-style:italic}
+
+/* CERT ZONE — always visible, locks/unlocks */
+.cert-zone{margin-top:1.5rem;border-radius:var(--r);overflow:hidden;border:2px solid var(--bor);transition:border-color .3s}
+.cert-zone.unlocked{border-color:rgba(5,150,105,.5)}
+.czh{padding:1rem 1.3rem;display:flex;align-items:center;gap:10px;background:var(--sur2);transition:background .3s}
+.cert-zone.unlocked .czh{background:rgba(5,150,105,.08)}
+.cz-icon{font-size:1.5rem;transition:all .4s}
+.cz-title{font-family:'Sora',sans-serif;font-weight:700;font-size:.95rem;color:var(--tx)}
+.cz-sub{font-size:.78rem;color:var(--mu);margin-top:1px}
+.czb{padding:1.2rem 1.3rem}
+
+/* locked */
+.cz-locked{display:flex;flex-direction:column;align-items:center;text-align:center;gap:.5rem;padding:.3rem 0}
+.cz-hint{font-size:.85rem;color:var(--mu);line-height:1.5}
+.cz-mini-track{width:100%;height:6px;background:var(--bor);border-radius:99px;overflow:hidden;margin:.3rem 0}
+.cz-mini-fill{height:100%;background:var(--gr);border-radius:99px;transition:width .4s ease}
+.cz-lock-btn{display:inline-flex;align-items:center;gap:8px;padding:.65rem 1.5rem;border-radius:99px;border:2px dashed var(--bor);background:transparent;color:var(--li);font-family:'Sora',sans-serif;font-weight:700;font-size:.88rem;cursor:not-allowed;margin-top:.4rem;width:100%;justify-content:center}
+
+/* unlocked */
+.cz-unlocked{display:none;flex-direction:column;align-items:center;text-align:center;gap:.6rem}
+.cert-zone.unlocked .cz-locked{display:none}
+.cert-zone.unlocked .cz-unlocked{display:flex}
+.cz-banner{background:rgba(5,150,105,.1);border:1.5px solid rgba(5,150,105,.3);border-radius:var(--rs);padding:.7rem 1rem;font-size:.85rem;color:var(--ok);font-weight:600;width:100%;text-align:center}
+.ci-row{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;width:100%}
+.ci-row input{flex:1;min-width:170px;padding:.6rem 1rem;border-radius:99px;border:2px solid var(--bor);background:var(--sur2);color:var(--tx);font-size:.9rem;font-family:'DM Sans',sans-serif;outline:none;transition:border-color .2s}
+.ci-row input:focus{border-color:var(--pl)}
+.cert-gen-btn{display:inline-flex;align-items:center;gap:7px;background:linear-gradient(135deg,var(--ok),#10B981);color:#fff;border:none;border-radius:99px;padding:.62rem 1.3rem;font-family:'Sora',sans-serif;font-weight:700;font-size:.88rem;cursor:pointer;transition:opacity .2s,transform .2s;white-space:nowrap}
+.cert-gen-btn:hover{opacity:.88;transform:scale(1.03)}
+
+/* NOT RESOLVED */
+.not-resolved{margin-top:1.5rem;border-radius:var(--r);border:1.5px solid var(--bor);overflow:hidden}
+.nr-hdr{background:var(--sur2);padding:1rem 1.3rem;display:flex;align-items:center;gap:10px}
+.nr-hdr span{font-family:'Sora',sans-serif;font-weight:700;font-size:.9rem;color:var(--tx)}
 .nr-body{padding:1.2rem 1.3rem}
-.nr-body p{font-size:.88rem;color:var(--muted);margin-bottom:1rem;line-height:1.6}
-.nr-btn{display:inline-flex;align-items:center;gap:8px;background:var(--grad);color:#fff;border:none;border-radius:99px;padding:.65rem 1.4rem;font-family:'Sora',sans-serif;font-weight:700;font-size:.88rem;cursor:pointer;transition:opacity .2s,transform .2s;text-decoration:none}
-.nr-btn:hover{opacity:.88;transform:scale(1.03)}
+.nr-body p{font-size:.88rem;color:var(--mu);margin-bottom:1rem;line-height:1.6}
+.nr-btn{display:inline-flex;align-items:center;gap:8px;background:var(--gr);color:#fff;border:none;border-radius:99px;padding:.65rem 1.4rem;font-family:'Sora',sans-serif;font-weight:700;font-size:.88rem;cursor:pointer;text-decoration:none}
+.nr-btn:hover{opacity:.88}
 
-/* ===== SOLVE + CERT ===== */
-.solve-wrap{margin-top:2rem;text-align:center;border-top:1px solid var(--border);padding-top:1.5rem}
-.solve-btn{display:inline-flex;align-items:center;gap:8px;background:transparent;border:2px solid var(--ok);color:var(--ok);border-radius:99px;padding:.65rem 1.5rem;font-family:'Sora',sans-serif;font-weight:700;font-size:.92rem;cursor:pointer;transition:all .25s}
-.solve-btn:hover{background:rgba(5,150,105,.1)}
-.solve-btn.done{background:var(--ok);color:#fff;border-color:var(--ok);transform:scale(1.04)}
-
-/* Cert prompt */
-.cert-prompt{margin-top:1rem;display:none;animation:fds .3s ease}
-.cert-prompt.show{display:block}
-.cert-prompt p{font-size:.88rem;color:var(--muted);margin-bottom:.6rem}
-.cert-input-row{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
-.cert-input-row input{flex:1;min-width:180px;padding:.6rem 1rem;border-radius:99px;border:2px solid var(--border);background:var(--surface2);color:var(--text);font-size:.92rem;font-family:'DM Sans',sans-serif;outline:none;transition:border-color .2s}
-.cert-input-row input:focus{border-color:var(--purple-l)}
-.cert-dl-btn{display:inline-flex;align-items:center;gap:7px;background:var(--grad);color:#fff;border:none;border-radius:99px;padding:.6rem 1.3rem;font-family:'Sora',sans-serif;font-weight:700;font-size:.88rem;cursor:pointer;transition:opacity .2s,transform .2s;white-space:nowrap}
-.cert-dl-btn:hover{opacity:.88;transform:scale(1.03)}
-
-/* ===== CONFETTI ===== */
-.confetti-container{position:fixed;inset:0;pointer-events:none;z-index:9999;overflow:hidden}
+/* CONFETTI */
+.conf-wrap{position:fixed;inset:0;pointer-events:none;z-index:9999;overflow:hidden}
 .conf{position:absolute;animation:confFall linear forwards}
 @keyframes confFall{0%{transform:translateY(-20px) rotate(0deg);opacity:1}100%{transform:translateY(105vh) rotate(720deg);opacity:0}}
 
-/* ===== CERT MODAL ===== */
+/* CERT PREVIEW */
 .cert-overlay{position:fixed;inset:0;background:rgba(8,4,24,.8);z-index:600;display:none;align-items:center;justify-content:center;padding:1.5rem;backdrop-filter:blur(6px)}
 .cert-overlay.open{display:flex;animation:fi .25s ease}
 .cert-box{background:#fff;border-radius:16px;overflow:hidden;max-width:720px;width:100%;box-shadow:0 24px 80px rgba(0,0,0,.5);animation:su .3s cubic-bezier(.34,1.56,.64,1)}
-
-/* The actual certificate canvas area */
 #certCanvas{display:block;width:100%;max-width:720px;height:auto}
+.cert-acts{background:#f9f9f9;padding:1rem 1.5rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;border-top:1px solid #e5e5e5;flex-wrap:wrap}
+.cert-acts p{font-size:.75rem;color:#999;line-height:1.4;max-width:360px}
+.cert-acts-btns{display:flex;gap:8px;flex-shrink:0}
+.cert-close-btn{padding:.55rem 1.1rem;border-radius:99px;border:1.5px solid #ddd;background:#fff;color:#444;font-family:'Sora',sans-serif;font-weight:600;font-size:.82rem;cursor:pointer}
+.cert-save-btn{padding:.55rem 1.2rem;border-radius:99px;border:none;background:linear-gradient(135deg,#7C3AED,#D97706);color:#fff;font-family:'Sora',sans-serif;font-weight:700;font-size:.82rem;cursor:pointer;display:flex;align-items:center;gap:6px}
+.cert-save-btn:hover{opacity:.88}
 
-.cert-actions{background:#f9f9f9;padding:1rem 1.5rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;border-top:1px solid #e5e5e5;flex-wrap:wrap}
-.cert-actions p{font-size:.78rem;color:#888;line-height:1.4;max-width:360px}
-.cert-actions-btns{display:flex;gap:8px;flex-shrink:0}
-.cert-close-btn{padding:.55rem 1.1rem;border-radius:99px;border:1.5px solid #ddd;background:#fff;color:#444;font-family:'Sora',sans-serif;font-weight:600;font-size:.82rem;cursor:pointer;transition:all .2s}
-.cert-close-btn:hover{border-color:#aaa}
-.cert-save-btn{padding:.55rem 1.2rem;border-radius:99px;border:none;background:linear-gradient(135deg,#7C3AED,#D97706);color:#fff;font-family:'Sora',sans-serif;font-weight:700;font-size:.82rem;cursor:pointer;transition:opacity .2s,transform .2s;display:flex;align-items:center;gap:6px}
-.cert-save-btn:hover{opacity:.88;transform:scale(1.03)}
+/* AI CHAT */
+.chat-fab{position:fixed;bottom:1.5rem;right:1.5rem;z-index:150;width:56px;height:56px;border-radius:50%;background:var(--gr);color:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.5rem;box-shadow:0 6px 24px rgba(124,58,237,.45);transition:transform .2s}
+.chat-fab:hover{transform:scale(1.08)}
+.chat-fab .notif{position:absolute;top:2px;right:2px;width:14px;height:14px;border-radius:50%;background:var(--ol);border:2px solid var(--sur);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.2)}}
+.chat-panel{position:fixed;bottom:5.5rem;right:1.5rem;z-index:149;width:340px;max-width:calc(100vw - 2rem);background:var(--sur);border:1.5px solid var(--bor);border-radius:var(--r);box-shadow:var(--sh2);display:none;flex-direction:column;overflow:hidden;animation:fds .25s ease}
+.chat-panel.open{display:flex}
+.chat-hdr{background:var(--gr);padding:.9rem 1.1rem;display:flex;align-items:center;gap:10px;flex-shrink:0}
+.chat-hdr-info{flex:1}
+.chat-hdr-info strong{display:block;font-family:'Sora',sans-serif;font-weight:700;font-size:.92rem;color:#fff}
+.chat-hdr-info span{font-size:.75rem;color:rgba(255,255,255,.75)}
+.chat-cls{background:rgba(255,255,255,.2);border:none;color:#fff;width:30px;height:30px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.9rem;transition:background .2s;flex-shrink:0}
+.chat-cls:hover{background:rgba(255,255,255,.35)}
+.chat-msgs{flex:1;overflow-y:auto;padding:.9rem;display:flex;flex-direction:column;gap:.7rem;max-height:320px;min-height:180px}
+.chat-msg{max-width:88%;padding:.6rem .9rem;border-radius:14px;font-size:.86rem;line-height:1.55;animation:fds .2s ease}
+.chat-msg.bot{background:var(--sur2);border:1px solid var(--bor);color:var(--tx);align-self:flex-start;border-bottom-left-radius:4px}
+.chat-msg.user{background:var(--gr);color:#fff;align-self:flex-end;border-bottom-right-radius:4px}
+.chat-msg.typing{background:var(--sur2);border:1px solid var(--bor);align-self:flex-start;padding:.7rem .9rem}
+.tdots{display:flex;gap:4px;align-items:center}
+.tdots span{width:7px;height:7px;border-radius:50%;background:var(--li);animation:tb 1.2s infinite}
+.tdots span:nth-child(2){animation-delay:.2s}.tdots span:nth-child(3){animation-delay:.4s}
+@keyframes tb{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-6px)}}
+.chat-sugs{display:flex;flex-wrap:wrap;gap:5px;padding:.5rem .9rem 0}
+.csug{font-size:.75rem;padding:4px 10px;border-radius:99px;border:1.5px solid var(--bor);background:var(--sur2);color:var(--mu);cursor:pointer;font-family:'DM Sans',sans-serif;font-weight:500;transition:all .15s;white-space:nowrap}
+.csug:hover{background:var(--pll);border-color:var(--pl);color:var(--p)}
+.chat-inp-row{display:flex;gap:6px;padding:.75rem;border-top:1px solid var(--bor);flex-shrink:0}
+.chat-inp-row input{flex:1;border:1.5px solid var(--bor);border-radius:99px;padding:.5rem .9rem;font-size:.86rem;font-family:'DM Sans',sans-serif;background:var(--sur2);color:var(--tx);outline:none;transition:border-color .2s}
+.chat-inp-row input:focus{border-color:var(--pl)}
+.chat-send{width:34px;height:34px;border-radius:50%;background:var(--gr);border:none;color:#fff;font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.chat-send:hover{opacity:.85}
 
-/* ===== FOOTER ===== */
-footer{text-align:center;padding:2rem;color:var(--light);font-size:.83rem;border-top:1px solid var(--border);margin-top:3rem}
-footer strong{color:var(--purple)}
+/* FOOTER */
+footer{text-align:center;padding:2rem;color:var(--li);font-size:.83rem;border-top:1px solid var(--bor);margin-top:3rem}
+footer strong{color:var(--p)}
 
-/* ===== PRINT ===== */
+/* PRINT */
 @media print{
-  header,footer,.cat-filter,.quick-tags,.search-outer,.hactions,
-  .solve-wrap,.not-resolved,.progress-wrap,.result-count,.btt,.toast-wrap{display:none!important}
+  header,footer,.cat-filter,.qtags,.search-outer,.hact,.cert-zone,.not-resolved,.rating-wrap,.prog-wrap,.rc,.btt,.toast-wrap,.chat-fab,.chat-panel,.rec-sec,.ai-banner{display:none!important}
   body{background:#fff!important;color:#000!important}
   .overlay{position:static!important;background:none!important;padding:0!important;display:block!important;backdrop-filter:none!important}
   .modal{box-shadow:none!important;border:none!important;max-width:100%!important;border-radius:0!important;animation:none!important}
   .mhead{-webkit-print-color-adjust:exact;print-color-adjust:exact}
   .mbody{padding:1rem!important}
-  .card,.grid,.hero{display:none!important}
-  main{display:none!important}
-  .overlay.open .modal .mbody .sg{page-break-inside:avoid}
+  .card,.grid,.hero,main{display:none!important}
 }
-
 @media(max-width:600px){
-  header{padding:0 1rem}
-  .hero{padding:2.5rem 1rem 2rem}
-  main{padding:1.5rem 1rem 4rem}
-  .grid{grid-template-columns:1fr}
-  .mbody{padding:1.2rem}
-  .progress-wrap{padding:.9rem 1.2rem}
+  header{padding:0 1rem}.hero{padding:2.5rem 1rem 2rem}
+  main{padding:1.5rem 1rem 4rem}.grid{grid-template-columns:1fr}
+  .mbody{padding:1.2rem}.prog-wrap{padding:.9rem 1.2rem}
   .search-bar .sbtn{padding:.6rem .9rem;font-size:.8rem}
-  .cert-actions{flex-direction:column;align-items:flex-start}
+  .chat-panel{right:.5rem;width:calc(100vw - 1rem)}
 }
 </style>
 </head>
 <body>
 
-<!-- CONFETTI -->
-<div class="confetti-container" id="confetti" aria-hidden="true"></div>
-
-<!-- TOAST -->
+<div class="conf-wrap" id="confWrap" aria-hidden="true"></div>
 <div class="toast-wrap" id="toastWrap" aria-live="polite"></div>
-
-<!-- BACK TO TOP -->
 <button class="btt" id="bttBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Voltar ao topo">↑</button>
 
 <!-- A11Y PANEL -->
-<div class="a11y-panel" id="a11yPanel" role="dialog" aria-label="Acessibilidade" aria-modal="true">
+<div class="a11y-panel" id="a11yPanel" role="dialog" aria-modal="true">
   <h3>♿ Acessibilidade</h3>
   <div class="arow"><span>📏 Texto</span>
     <div class="abtns">
@@ -296,23 +342,20 @@ footer strong{color:var(--purple)}
     </div>
   </div>
   <div class="arow"><span>🌑 Alto contraste</span>
-    <button class="tog" id="ctog" onclick="toggleHC()" aria-pressed="false" aria-label="Alto contraste"></button>
+    <button class="tog" id="ctog" onclick="toggleHC()" aria-pressed="false"></button>
   </div>
   <div class="arow" style="flex-direction:column;align-items:flex-start;gap:5px;margin-top:.3rem">
     <span style="font-size:.85rem">🔊 Deficiência auditiva</span>
-    <p style="font-size:.79rem;color:var(--light);line-height:1.5">Site 100% visual — sem áudio ✅</p>
+    <p style="font-size:.79rem;color:var(--li);line-height:1.5">Site 100% visual — sem áudio ✅</p>
   </div>
 </div>
 
 <!-- HEADER -->
 <header>
-  <a href="#" class="logo" aria-label="Suporte Tech Escolar">
-    <div class="logo-icon" aria-hidden="true">🖥️</div>
-    Suporte <em>Tech</em>
-  </a>
-  <div class="hactions">
-    <button class="ibtn" id="themeBtn" onclick="toggleTheme()" aria-label="Modo noturno" title="Modo noturno">🌙</button>
-    <button class="ibtn" id="a11yBtn" onclick="toggleA11y()" aria-label="Acessibilidade" aria-controls="a11yPanel" aria-expanded="false">♿</button>
+  <a href="#" class="logo"><div class="logo-icon" aria-hidden="true">🖥️</div>Suporte <em>Tech</em></a>
+  <div class="hact">
+    <button class="ibtn" id="themeBtn" onclick="toggleTheme()" aria-label="Modo noturno">🌙</button>
+    <button class="ibtn" id="a11yBtn" onclick="toggleA11y()" aria-label="Acessibilidade" aria-expanded="false">♿</button>
   </div>
 </header>
 
@@ -320,79 +363,72 @@ footer strong{color:var(--purple)}
 <section class="hero">
   <div class="hero-badge">🏫 Escolas SEDUC</div>
   <h1>Qual é o seu <span class="hl">problema hoje?</span></h1>
-  <p class="hero-sub">Digite abaixo ou escolha um tutorial para resolver rápido e sem complicação 😊</p>
+  <p class="hero-sub">Descreva com suas palavras ou escolha um tutorial abaixo 😊</p>
   <div class="search-outer">
     <div class="search-bar">
       <span class="si" aria-hidden="true">🔍</span>
-      <input type="search" id="searchInput" placeholder="Ex: Wi-Fi, tablet, internet..." aria-label="Buscar tutorial" autocomplete="off" oninput="onSearch()" onfocus="onSearch()" onkeydown="navSug(event)"/>
-      <button class="sbtn" onclick="clearSearch()" aria-label="Limpar busca">Limpar ✕</button>
+      <input type="search" id="searchInput" placeholder="Ex: meu tablet não conecta na escola..." aria-label="Buscar tutorial" autocomplete="off" oninput="onSearch()" onfocus="onSearch()" onkeydown="navSug(event)" onkeypress="searchEnter(event)"/>
+      <button class="sbtn" onclick="clearSearch()">Limpar ✕</button>
     </div>
-    <div class="suggestions" id="suggestions" role="listbox"></div>
+    <div class="sugs" id="sugs" role="listbox"></div>
   </div>
-  <div id="resultCount" class="result-count"></div>
-  <div class="quick-tags">
+  <div id="aiBanner" class="ai-banner">
+    <div class="ai-banner-head">✨ Sugestão da IA</div>
+    <p id="aiBannerText"></p>
+    <button class="ai-banner-btn" id="aiBannerBtn">Abrir tutorial →</button>
+  </div>
+  <div id="rcDiv" class="rc"></div>
+  <div class="qtags">
     <button class="qtag" onclick="quickSearch('Wi-Fi')">📶 Wi-Fi</button>
     <button class="qtag" onclick="quickSearch('tablet')">📱 Tablet</button>
     <button class="qtag" onclick="quickSearch('internet')">🌐 Internet</button>
-    <button class="qtag" onclick="quickSearch('site')">🔗 Site com erro</button>
+    <button class="qtag" onclick="quickSearch('site com erro')">🔗 Site com erro</button>
     <button class="qtag" onclick="quickSearch('rede')">🔌 Rede</button>
   </div>
 </section>
 
 <!-- MAIN -->
 <main>
-  <div class="cat-filter" id="catFilter">
+  <div class="rec-sec" id="recSec">
+    <div class="slabel">🕐 Vistos recentemente</div>
+    <div class="rec-list" id="recList"></div>
+  </div>
+  <div class="cat-filter">
     <button class="cfbtn active" onclick="filterCat(this,'all')">✨ Todos <span class="cf-count">3</span></button>
     <button class="cfbtn" onclick="filterCat(this,'computador')">🖥️ Computador <span class="cf-count">1</span></button>
     <button class="cfbtn" onclick="filterCat(this,'tablet')">📱 Tablet <span class="cf-count">1</span></button>
     <button class="cfbtn" onclick="filterCat(this,'internet')">🌐 Internet <span class="cf-count">1</span></button>
   </div>
   <div class="slabel">📚 Todos os tutoriais</div>
-
-  <!-- SKELETONS (shown briefly then replaced) -->
-  <div class="grid" id="skeletonGrid">
+  <div class="grid" id="skelGrid">
     <div class="skeleton"><div class="skel-line skel-emoji"></div><div class="skel-line skel-tag"></div><div class="skel-line skel-title"></div><div class="skel-line skel-desc"></div><div class="skel-line skel-desc2"></div></div>
     <div class="skeleton"><div class="skel-line skel-emoji"></div><div class="skel-line skel-tag"></div><div class="skel-line skel-title"></div><div class="skel-line skel-desc"></div><div class="skel-line skel-desc2"></div></div>
     <div class="skeleton"><div class="skel-line skel-emoji"></div><div class="skel-line skel-tag"></div><div class="skel-line skel-title"></div><div class="skel-line skel-desc"></div><div class="skel-line skel-desc2"></div></div>
   </div>
-
   <div class="grid" id="grid" style="display:none">
-
-    <div class="card" tabindex="0" role="button" id="card-m1" data-cat="computador" data-kw="rede wi-fi conectado internet computador notebook seduc-maq" onclick="openM('m1')" onkeydown="kOpen(event,'m1')" aria-label="Verificar conexão de rede">
+    <div class="card" tabindex="0" role="button" id="card-m1" data-cat="computador" data-kw="rede wi-fi conectado internet computador notebook seduc-maq" onclick="openM('m1')" onkeydown="kOpen(event,'m1')">
       <div class="solved-badge">✅ Resolvido</div>
-      <svg class="card-illus" viewBox="0 0 100 100" fill="none"><path d="M50 10 Q90 50 50 90 Q10 50 50 10Z" stroke="currentColor" stroke-width="3" fill="none"/><circle cx="50" cy="50" r="20" stroke="currentColor" stroke-width="3" fill="none"/><path d="M10 50h80M50 10v80" stroke="currentColor" stroke-width="2"/></svg>
-      <span class="cemoji" aria-hidden="true">📶</span>
-      <div class="ctag">🖥️ Computador / Notebook</div>
-      <h2>Verificar conexão de rede</h2>
-      <p>Veja se o computador está na rede certa da escola.</p>
-      <div class="carrow" aria-hidden="true">→</div>
+      <svg class="card-illus" viewBox="0 0 100 100" fill="none"><path d="M50 10 Q90 50 50 90 Q10 50 50 10Z" stroke="currentColor" stroke-width="3"/><circle cx="50" cy="50" r="20" stroke="currentColor" stroke-width="3"/><path d="M10 50h80M50 10v80" stroke="currentColor" stroke-width="2"/></svg>
+      <span class="cemoji">📶</span><div class="ctag">🖥️ Computador / Notebook</div>
+      <h2>Verificar conexão de rede</h2><p>Veja se o computador está na rede certa da escola.</p>
+      <div class="carrow">→</div>
     </div>
-
-    <div class="card" tabindex="0" role="button" id="card-m2" data-cat="tablet" data-kw="tablet wi-fi tablets-escolas configurar mob central sincronizar" onclick="openM('m2')" onkeydown="kOpen(event,'m2')" aria-label="Configurar Wi-Fi nos tablets">
+    <div class="card" tabindex="0" role="button" id="card-m2" data-cat="tablet" data-kw="tablet wi-fi tablets-escolas configurar mob central sincronizar" onclick="openM('m2')" onkeydown="kOpen(event,'m2')">
       <div class="solved-badge">✅ Resolvido</div>
-      <svg class="card-illus" viewBox="0 0 100 100" fill="none"><rect x="25" y="10" width="50" height="80" rx="8" stroke="currentColor" stroke-width="3" fill="none"/><circle cx="50" cy="80" r="4" stroke="currentColor" stroke-width="2" fill="none"/><line x1="25" y1="70" x2="75" y2="70" stroke="currentColor" stroke-width="2"/></svg>
-      <span class="cemoji" aria-hidden="true">📱</span>
-      <div class="ctag">📱 Tablet</div>
-      <h2>Configurar Wi-Fi nos tablets</h2>
-      <p>Restaure a conexão do tablet à rede da escola quando não aparecer.</p>
-      <div class="carrow" aria-hidden="true">→</div>
+      <svg class="card-illus" viewBox="0 0 100 100" fill="none"><rect x="25" y="10" width="50" height="80" rx="8" stroke="currentColor" stroke-width="3"/><circle cx="50" cy="80" r="4" stroke="currentColor" stroke-width="2"/><line x1="25" y1="70" x2="75" y2="70" stroke="currentColor" stroke-width="2"/></svg>
+      <span class="cemoji">📱</span><div class="ctag">📱 Tablet</div>
+      <h2>Configurar Wi-Fi nos tablets</h2><p>Restaure a conexão do tablet à rede da escola.</p>
+      <div class="carrow">→</div>
     </div>
-
-    <div class="card" tabindex="0" role="button" id="card-m3" data-cat="internet" data-kw="internet site problema erro lentidão google youtube" onclick="openM('m3')" onkeydown="kOpen(event,'m3')" aria-label="Internet ou site com problema?">
+    <div class="card" tabindex="0" role="button" id="card-m3" data-cat="internet" data-kw="internet site problema erro lentidão google youtube" onclick="openM('m3')" onkeydown="kOpen(event,'m3')">
       <div class="solved-badge">✅ Resolvido</div>
-      <svg class="card-illus" viewBox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="38" stroke="currentColor" stroke-width="3" fill="none"/><path d="M12 50h76M50 12v76M20 25Q50 40 80 25M20 75Q50 60 80 75" stroke="currentColor" stroke-width="2"/></svg>
-      <span class="cemoji" aria-hidden="true">🌐</span>
-      <div class="ctag">🌐 Internet / Site</div>
-      <h2>Internet ou site com problema?</h2>
-      <p>Descubra se o problema é na internet ou só no site que você quer acessar.</p>
-      <div class="carrow" aria-hidden="true">→</div>
+      <svg class="card-illus" viewBox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="38" stroke="currentColor" stroke-width="3"/><path d="M12 50h76M50 12v76M20 25Q50 40 80 25M20 75Q50 60 80 75" stroke="currentColor" stroke-width="2"/></svg>
+      <span class="cemoji">🌐</span><div class="ctag">🌐 Internet / Site</div>
+      <h2>Internet ou site com problema?</h2><p>Descubra se o problema é na internet ou no site.</p>
+      <div class="carrow">→</div>
     </div>
-
   </div>
-  <div class="no-res" id="noRes" aria-live="polite">
-    <div class="ne">🤔</div>
-    <p>Nenhum tutorial encontrado.<br>Tente <strong>Wi-Fi</strong>, <strong>tablet</strong> ou <strong>internet</strong>.</p>
-  </div>
+  <div class="no-res" id="noRes"><div class="ne">🤔</div><p>Nenhum tutorial encontrado.<br>Tente <strong>Wi-Fi</strong>, <strong>tablet</strong> ou <strong>internet</strong>.</p></div>
 </main>
 
 <footer>
@@ -400,162 +436,190 @@ footer strong{color:var(--purple)}
   <p style="margin-top:.35rem;font-size:.76rem">Problema não resolvido? Contate o <strong>SETEC da URE</strong> 📞</p>
 </footer>
 
-<!-- ====== MODAL 1 ====== -->
-<div class="overlay" id="m1" role="dialog" aria-modal="true" aria-labelledby="m1t" onclick="overlayClose(event,'m1')">
+<!-- CHAT FAB -->
+<button class="chat-fab" id="chatFab" onclick="toggleChat()" aria-label="Assistente de suporte">
+  💬<div class="notif"></div>
+</button>
+<div class="chat-panel" id="chatPanel">
+  <div class="chat-hdr">
+    <div style="font-size:1.3rem">🤖</div>
+    <div class="chat-hdr-info"><strong>Assistente Tech</strong><span>✅ Online agora</span></div>
+    <button class="chat-cls" onclick="toggleChat()">✕</button>
+  </div>
+  <div class="chat-msgs" id="chatMsgs"></div>
+  <div class="chat-sugs" id="chatSugs"></div>
+  <div class="chat-inp-row">
+    <input type="text" id="chatInput" placeholder="Descreva seu problema..." onkeypress="chatEnter(event)"/>
+    <button class="chat-send" onclick="sendChat()" aria-label="Enviar">➤</button>
+  </div>
+</div>
+
+<!-- MODAL 1 -->
+<div class="overlay" id="m1" role="dialog" aria-modal="true" onclick="overlayClose(event,'m1')">
   <div class="modal">
     <div class="mhead">
-      <span class="me" aria-hidden="true">📶</span>
-      <h2 id="m1t">Verificar conexão de rede</h2>
-      <p>🖥️ Computador e Notebook</p>
-      <div class="mhead-actions">
-        <button class="print-btn" onclick="printModal('m1')" title="Imprimir tutorial" aria-label="Imprimir">🖨️</button>
-      </div>
-      <button class="mclose" onclick="closeM('m1')" aria-label="Fechar">✕</button>
+      <span class="me">📶</span><h2>Verificar conexão de rede</h2><p>🖥️ Computador e Notebook</p>
+      <div class="mhead-acts"><button class="print-btn" onclick="printModal('m1')" title="Imprimir">🖨️</button></div>
+      <button class="mclose" onclick="closeM('m1')">✕</button>
     </div>
-    <div class="progress-wrap">
-      <div class="prog-header"><span class="prog-label">Seu progresso</span><span class="prog-counter" id="pc-m1">0 de 6 passos</span></div>
+    <div class="prog-wrap">
+      <div class="prog-hdr"><span class="prog-label">Seu progresso</span><span class="prog-cnt" id="pc-m1">0 de 6 passos</span></div>
       <div class="prog-track"><div class="prog-fill" id="pf-m1" style="width:0%"></div></div>
-      <div class="prog-steps" id="ps-m1">
-        <div class="prog-dot current">1</div><div class="prog-dot">2</div><div class="prog-dot">3</div>
-        <div class="prog-dot">4</div><div class="prog-dot">5</div><div class="prog-dot">6</div>
-      </div>
+      <div class="prog-dots" id="pd-m1"><div class="prog-dot cur">1</div><div class="prog-dot">2</div><div class="prog-dot">3</div><div class="prog-dot">4</div><div class="prog-dot">5</div><div class="prog-dot">6</div></div>
     </div>
     <div class="mbody">
-      <div class="cl info"><span class="ci">ℹ️</span><div><strong>Rede correta da escola:</strong><br>Computadores e notebooks devem estar em: <span class="nn">SEDUC-MAQ</span></div></div>
+      <div class="cl info"><span class="ci">ℹ️</span><div><strong>Rede correta:</strong> <span class="nn">SEDUC-MAQ</span></div></div>
       <div class="sg">
         <div class="sgt">👆 Passo 1 — Encontrar o ícone de Wi-Fi</div>
-        <div class="step" onclick="toggleStep(this,'m1')"><div class="snum">1</div><div class="sc"><strong>Tela desbloqueada</strong><p>Olhe no <strong>canto inferior direito</strong> — perto do relógio. Procure as barrinhas de sinal 📶</p></div></div>
-        <div class="step" onclick="toggleStep(this,'m1')"><div class="snum">2</div><div class="sc"><strong>Tela bloqueada</strong><p>Ícone próximo ao bonequinho 🧍 de acessibilidade, também com barrinhas de sinal.</p></div></div>
+        <div class="step" onclick="toggleStep(this,'m1')"><div class="snum">1</div><div class="sc"><strong>Tela desbloqueada</strong><p>Canto inferior direito — perto do relógio. Barrinhas de sinal 📶</p></div></div>
+        <div class="step" onclick="toggleStep(this,'m1')"><div class="snum">2</div><div class="sc"><strong>Tela bloqueada</strong><p>Próximo ao bonequinho 🧍 de acessibilidade.</p></div></div>
       </div>
       <div class="sg">
         <div class="sgt">🔍 Passo 2 — Verificar a rede conectada</div>
-        <div class="step" onclick="toggleStep(this,'m1')"><div class="snum">3</div><div class="sc"><strong>Clique no ícone de Wi-Fi</strong><p>Vai abrir uma lista com redes disponíveis.</p></div></div>
-        <div class="step" onclick="toggleStep(this,'m1')"><div class="snum">4</div><div class="sc"><strong>Veja qual está conectada</strong><p>Se mostrar <span class="nn">SEDUC-MAQ</span> — ótimo! Se for outra rede, continue 👇</p></div></div>
-        <div class="step" onclick="toggleStep(this,'m1')"><div class="snum">5</div><div class="sc"><strong>Trocar para a rede certa</strong><p>Encontre <span class="nn">SEDUC-MAQ</span> → clique → <strong>Conectar</strong> → aguarde.</p></div></div>
+        <div class="step" onclick="toggleStep(this,'m1')"><div class="snum">3</div><div class="sc"><strong>Clique no ícone de Wi-Fi</strong><p>Lista de redes disponíveis vai aparecer.</p></div></div>
+        <div class="step" onclick="toggleStep(this,'m1')"><div class="snum">4</div><div class="sc"><strong>Veja qual está conectada</strong><p>Se for <span class="nn">SEDUC-MAQ</span> — ótimo! Se não, continue 👇</p></div></div>
+        <div class="step" onclick="toggleStep(this,'m1')"><div class="snum">5</div><div class="sc"><strong>Trocar para a rede certa</strong><p>Localize <span class="nn">SEDUC-MAQ</span> → clique → <strong>Conectar</strong> → aguarde.</p></div></div>
       </div>
       <div class="sg">
-        <div class="sgt">✅ Passo 3 — Testar a conexão</div>
+        <div class="sgt">✅ Passo 3 — Testar</div>
         <div class="step" onclick="toggleStep(this,'m1')"><div class="snum">6</div><div class="sc"><strong>Abra o navegador e acesse YouTube, Google ou UOL</strong><p>Se abriu normalmente — tudo certo! ✅</p></div></div>
       </div>
-      <div class="cl ok"><span class="ci">✅</span><div><strong>Deu certo!</strong> Seu computador está na rede certa.</div></div>
-      <div class="solve-wrap">
-        <button class="solve-btn" id="sb-m1" onclick="markSolved('m1')" aria-label="Marcar como resolvido">✅ Problema resolvido!</button>
-        <div class="cert-prompt" id="cp-m1">
-          <p>🎓 Parabéns! Digite seu nome para emitir o certificado de conclusão:</p>
-          <div class="cert-input-row">
-            <input type="text" id="ci-m1" placeholder="Seu nome completo..." aria-label="Nome para certificado" maxlength="60"/>
-            <button class="cert-dl-btn" onclick="generateCert('m1','Verificar Conexão de Rede')">🏆 Gerar Certificado</button>
+      <div class="cl ok"><span class="ci">✅</span><div><strong>Deu certo!</strong> Computador na rede correta.</div></div>
+      <div class="rating-wrap"><p>Este tutorial te ajudou?</p>
+        <div class="rating-btns">
+          <button class="rbtn bad" onclick="rate('m1','bad',this)">😕 Não ajudou</button>
+          <button class="rbtn mid" onclick="rate('m1','mid',this)">😐 Mais ou menos</button>
+          <button class="rbtn good" onclick="rate('m1','good',this)">😊 Resolveu!</button>
+        </div>
+        <div class="rating-fb" id="rf-m1"></div>
+      </div>
+      <div class="cert-zone" id="cz-m1">
+        <div class="czh"><span class="cz-icon" id="czicon-m1">🔒</span>
+          <div><div class="cz-title">🏆 Certificado de Conclusão</div><div class="cz-sub" id="czsub-m1">Conclua todos os passos para desbloquear</div></div>
+        </div>
+        <div class="czb">
+          <div class="cz-locked">
+            <p class="cz-hint">Marque todos os <strong>6 passos</strong> acima clicando em cada um ☝️</p>
+            <div class="cz-mini-track"><div class="cz-mini-fill" id="czfill-m1" style="width:0%"></div></div>
+            <button class="cz-lock-btn" disabled>🔒 Certificado bloqueado</button>
+          </div>
+          <div class="cz-unlocked">
+            <div class="cz-banner">🎉 Parabéns! Tutorial concluído — certificado desbloqueado!</div>
+            <p style="font-size:.85rem;color:var(--mu)">Digite seu nome para emitir:</p>
+            <div class="ci-row">
+              <input type="text" id="ci-m1" placeholder="Seu nome completo..." maxlength="60"/>
+              <button class="cert-gen-btn" onclick="generateCert('m1','Verificar Conexão de Rede')">🏆 Gerar</button>
+            </div>
           </div>
         </div>
       </div>
-      <div class="not-resolved">
-        <div class="nr-header"><span>😕 Ainda não funcionou?</span></div>
-        <div class="nr-body">
-          <p>Mesmo na <span class="nn">SEDUC-MAQ</span>, o site não abre? Coloque um aviso no computador e informe ao técnico na próxima visita. 🔧</p>
-          <a class="nr-btn" href="mailto:setec@ure.edu.br">📞 Contatar SETEC da URE</a>
-        </div>
+      <div class="not-resolved"><div class="nr-hdr"><span>😕 Ainda não funcionou?</span></div>
+        <div class="nr-body"><p>Mesmo na <span class="nn">SEDUC-MAQ</span>, ainda sem internet? Informe ao técnico na próxima visita. 🔧</p>
+          <a class="nr-btn" href="mailto:setec@ure.edu.br">📞 Contatar SETEC da URE</a></div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- ====== MODAL 2 ====== -->
-<div class="overlay" id="m2" role="dialog" aria-modal="true" aria-labelledby="m2t" onclick="overlayClose(event,'m2')">
+<!-- MODAL 2 -->
+<div class="overlay" id="m2" role="dialog" aria-modal="true" onclick="overlayClose(event,'m2')">
   <div class="modal">
     <div class="mhead">
-      <span class="me" aria-hidden="true">📱</span>
-      <h2 id="m2t">Configurar Wi-Fi nos Tablets</h2>
-      <p>📱 Rede TABLETS-ESCOLAS</p>
-      <div class="mhead-actions">
-        <button class="print-btn" onclick="printModal('m2')" title="Imprimir tutorial" aria-label="Imprimir">🖨️</button>
-      </div>
-      <button class="mclose" onclick="closeM('m2')" aria-label="Fechar">✕</button>
+      <span class="me">📱</span><h2>Configurar Wi-Fi nos Tablets</h2><p>📱 Rede TABLETS-ESCOLAS</p>
+      <div class="mhead-acts"><button class="print-btn" onclick="printModal('m2')" title="Imprimir">🖨️</button></div>
+      <button class="mclose" onclick="closeM('m2')">✕</button>
     </div>
-    <div class="progress-wrap">
-      <div class="prog-header"><span class="prog-label">Seu progresso</span><span class="prog-counter" id="pc-m2">0 de 7 passos</span></div>
+    <div class="prog-wrap">
+      <div class="prog-hdr"><span class="prog-label">Seu progresso</span><span class="prog-cnt" id="pc-m2">0 de 7 passos</span></div>
       <div class="prog-track"><div class="prog-fill" id="pf-m2" style="width:0%"></div></div>
-      <div class="prog-steps" id="ps-m2">
-        <div class="prog-dot current">1</div><div class="prog-dot">2</div><div class="prog-dot">3</div>
-        <div class="prog-dot">4</div><div class="prog-dot">5</div><div class="prog-dot">6</div><div class="prog-dot">7</div>
-      </div>
+      <div class="prog-dots" id="pd-m2"><div class="prog-dot cur">1</div><div class="prog-dot">2</div><div class="prog-dot">3</div><div class="prog-dot">4</div><div class="prog-dot">5</div><div class="prog-dot">6</div><div class="prog-dot">7</div></div>
     </div>
     <div class="mbody">
-      <div class="cl info"><span class="ci">ℹ️</span><div><strong>Quando usar?</strong><br>Quando a rede <span class="nn">TABLETS-ESCOLAS</span> não aparece ou não conecta automaticamente.</div></div>
+      <div class="cl info"><span class="ci">ℹ️</span><div><strong>Quando usar?</strong> Rede <span class="nn">TABLETS-ESCOLAS</span> não aparece ou não conecta.</div></div>
       <div class="sg">
         <div class="sgt">⚙️ Passo 1 — Abrir Configurações</div>
-        <div class="step" onclick="toggleStep(this,'m2')"><div class="snum">1</div><div class="sc"><strong>Encontre o ícone de engrenagem ⚙️</strong><p>Na tela inicial, toque em <strong>Configurações Iniciais</strong>.</p></div></div>
+        <div class="step" onclick="toggleStep(this,'m2')"><div class="snum">1</div><div class="sc"><strong>Toque no ícone de engrenagem ⚙️</strong><p>Tela inicial → <strong>Configurações Iniciais</strong>.</p></div></div>
       </div>
       <div class="sg">
         <div class="sgt">🗑️ Passo 2 — Apagar redes salvas</div>
-        <div class="step" onclick="toggleStep(this,'m2')"><div class="snum">2</div><div class="sc"><strong>Vá em Configurações de Wi-Fi</strong><p>Toque em <strong>Configurações de Wi-Fi</strong>.</p></div></div>
-        <div class="step" onclick="toggleStep(this,'m2')"><div class="snum">3</div><div class="sc"><strong>Entre em "Redes Salvas" e apague todas</strong><p>Para cada rede: toque → <strong>Esquecer</strong>. Repita até a lista ficar vazia.</p></div></div>
+        <div class="step" onclick="toggleStep(this,'m2')"><div class="snum">2</div><div class="sc"><strong>Vá em Configurações de Wi-Fi</strong></div></div>
+        <div class="step" onclick="toggleStep(this,'m2')"><div class="snum">3</div><div class="sc"><strong>Redes Salvas → apague todas</strong><p>Para cada rede: toque → <strong>Esquecer</strong>. Repita até a lista ficar vazia.</p></div></div>
       </div>
       <div class="sg">
         <div class="sgt">🌐 Passo 3 — Rede temporária</div>
-        <div class="step" onclick="toggleStep(this,'m2')"><div class="snum">4</div><div class="sc"><strong>Conecte em qualquer rede com internet</strong><p>Rede da escola, computador ou <strong>hotspot do celular</strong>.</p></div></div>
+        <div class="step" onclick="toggleStep(this,'m2')"><div class="snum">4</div><div class="sc"><strong>Conecte em qualquer rede com internet</strong><p>Rede da escola, computador ou hotspot do celular.</p></div></div>
         <div class="cl warn"><span class="ci">⚠️</span><div>Conexão <strong>temporária</strong> — só para sincronizar.</div></div>
       </div>
       <div class="sg">
         <div class="sgt">🔄 Passo 4 — Sincronizar Mob Central</div>
-        <div class="step" onclick="toggleStep(this,'m2')"><div class="snum">5</div><div class="sc"><strong>Abra o Mob Central e toque ~10x em "Última Sincronização"</strong><p>Normal precisar tocar várias vezes! 👆</p></div></div>
-        <div class="cl err"><span class="ci">🚨</span><div><strong>Durante a sincronização:</strong> ❌ Não bloqueie ❌ Não desligue ❌ Não entre em espera</div></div>
+        <div class="step" onclick="toggleStep(this,'m2')"><div class="snum">5</div><div class="sc"><strong>Mob Central → toque ~10x em "Última Sincronização"</strong><p>Normal precisar tocar várias vezes! 👆</p></div></div>
+        <div class="cl err"><span class="ci">🚨</span><div>❌ Não bloqueie a tela ❌ Não desligue ❌ Não entre em espera</div></div>
       </div>
       <div class="sg">
-        <div class="sgt">✅ Passos 5, 6 e 7 — Finalizar</div>
+        <div class="sgt">✅ Passos finais</div>
         <div class="step" onclick="toggleStep(this,'m2')"><div class="snum">6</div><div class="sc"><strong>Confirme a sincronização</strong><p>"Última Sincronização" deve mostrar o horário atual.</p></div></div>
-        <div class="step" onclick="toggleStep(this,'m2')"><div class="snum">7</div><div class="sc"><strong>Remova a rede temporária e aguarde</strong><p>O tablet conectará automaticamente à <span class="nn">TABLETS-ESCOLAS</span>.</p></div></div>
+        <div class="step" onclick="toggleStep(this,'m2')"><div class="snum">7</div><div class="sc"><strong>Remova a rede temporária e aguarde</strong><p>Tablet conectará automaticamente à <span class="nn">TABLETS-ESCOLAS</span>.</p></div></div>
       </div>
       <div class="cl ok"><span class="ci">🎉</span><div><strong>Pronto!</strong> Tablet conectado à <span class="nn">TABLETS-ESCOLAS</span>!</div></div>
-      <div class="solve-wrap">
-        <button class="solve-btn" id="sb-m2" onclick="markSolved('m2')" aria-label="Marcar como resolvido">✅ Problema resolvido!</button>
-        <div class="cert-prompt" id="cp-m2">
-          <p>🎓 Parabéns! Digite seu nome para emitir o certificado de conclusão:</p>
-          <div class="cert-input-row">
-            <input type="text" id="ci-m2" placeholder="Seu nome completo..." aria-label="Nome para certificado" maxlength="60"/>
-            <button class="cert-dl-btn" onclick="generateCert('m2','Configurar Wi-Fi nos Tablets')">🏆 Gerar Certificado</button>
+      <div class="rating-wrap"><p>Este tutorial te ajudou?</p>
+        <div class="rating-btns">
+          <button class="rbtn bad" onclick="rate('m2','bad',this)">😕 Não ajudou</button>
+          <button class="rbtn mid" onclick="rate('m2','mid',this)">😐 Mais ou menos</button>
+          <button class="rbtn good" onclick="rate('m2','good',this)">😊 Resolveu!</button>
+        </div>
+        <div class="rating-fb" id="rf-m2"></div>
+      </div>
+      <div class="cert-zone" id="cz-m2">
+        <div class="czh"><span class="cz-icon" id="czicon-m2">🔒</span>
+          <div><div class="cz-title">🏆 Certificado de Conclusão</div><div class="cz-sub" id="czsub-m2">Conclua todos os passos para desbloquear</div></div>
+        </div>
+        <div class="czb">
+          <div class="cz-locked">
+            <p class="cz-hint">Marque todos os <strong>7 passos</strong> acima clicando em cada um ☝️</p>
+            <div class="cz-mini-track"><div class="cz-mini-fill" id="czfill-m2" style="width:0%"></div></div>
+            <button class="cz-lock-btn" disabled>🔒 Certificado bloqueado</button>
+          </div>
+          <div class="cz-unlocked">
+            <div class="cz-banner">🎉 Parabéns! Tutorial concluído — certificado desbloqueado!</div>
+            <p style="font-size:.85rem;color:var(--mu)">Digite seu nome para emitir:</p>
+            <div class="ci-row">
+              <input type="text" id="ci-m2" placeholder="Seu nome completo..." maxlength="60"/>
+              <button class="cert-gen-btn" onclick="generateCert('m2','Configurar Wi-Fi nos Tablets')">🏆 Gerar</button>
+            </div>
           </div>
         </div>
       </div>
-      <div class="not-resolved">
-        <div class="nr-header"><span>😕 Ainda não funcionou?</span></div>
-        <div class="nr-body">
-          <p>Se o tablet ainda não conectar, pode ser necessária visita técnica. 🔧</p>
-          <a class="nr-btn" href="mailto:setec@ure.edu.br">📞 Contatar SETEC da URE</a>
-        </div>
+      <div class="not-resolved"><div class="nr-hdr"><span>😕 Ainda não funcionou?</span></div>
+        <div class="nr-body"><p>Se o tablet ainda não conectar, pode ser necessária visita técnica. 🔧</p>
+          <a class="nr-btn" href="mailto:setec@ure.edu.br">📞 Contatar SETEC da URE</a></div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- ====== MODAL 3 ====== -->
-<div class="overlay" id="m3" role="dialog" aria-modal="true" aria-labelledby="m3t" onclick="overlayClose(event,'m3')">
+<!-- MODAL 3 -->
+<div class="overlay" id="m3" role="dialog" aria-modal="true" onclick="overlayClose(event,'m3')">
   <div class="modal">
     <div class="mhead">
-      <span class="me" aria-hidden="true">🌐</span>
-      <h2 id="m3t">Internet ou site com problema?</h2>
-      <p>🔍 Descubra onde está o erro</p>
-      <div class="mhead-actions">
-        <button class="print-btn" onclick="printModal('m3')" title="Imprimir tutorial" aria-label="Imprimir">🖨️</button>
-      </div>
-      <button class="mclose" onclick="closeM('m3')" aria-label="Fechar">✕</button>
+      <span class="me">🌐</span><h2>Internet ou site com problema?</h2><p>🔍 Descubra onde está o erro</p>
+      <div class="mhead-acts"><button class="print-btn" onclick="printModal('m3')" title="Imprimir">🖨️</button></div>
+      <button class="mclose" onclick="closeM('m3')">✕</button>
     </div>
-    <div class="progress-wrap">
-      <div class="prog-header"><span class="prog-label">Seu progresso</span><span class="prog-counter" id="pc-m3">0 de 3 passos</span></div>
+    <div class="prog-wrap">
+      <div class="prog-hdr"><span class="prog-label">Seu progresso</span><span class="prog-cnt" id="pc-m3">0 de 3 passos</span></div>
       <div class="prog-track"><div class="prog-fill" id="pf-m3" style="width:0%"></div></div>
-      <div class="prog-steps" id="ps-m3">
-        <div class="prog-dot current">1</div><div class="prog-dot">2</div><div class="prog-dot">3</div>
-      </div>
+      <div class="prog-dots" id="pd-m3"><div class="prog-dot cur">1</div><div class="prog-dot">2</div><div class="prog-dot">3</div></div>
     </div>
     <div class="mbody">
-      <div class="cl info"><span class="ci">💡</span><div><strong>Sabia disso?</strong> Se um site institucional não abrir, <strong>não significa</strong> que a internet está ruim. Pode ser só aquele site!</div></div>
+      <div class="cl info"><span class="ci">💡</span><div><strong>Sabia disso?</strong> Site institucional não abrindo <strong>não significa</strong> que a internet está ruim. Pode ser só aquele site!</div></div>
       <div class="sg">
         <div class="sgt">🧪 Passo 1 — Teste outro site</div>
-        <div class="step" onclick="toggleStep(this,'m3')"><div class="snum">1</div><div class="sc"><strong>Abra uma nova aba e acesse</strong><p>🔵 <strong>Google</strong> &nbsp;📺 <strong>YouTube</strong> &nbsp;📧 <strong>Gmail</strong> &nbsp;🟠 <strong>UOL</strong></p></div></div>
+        <div class="step" onclick="toggleStep(this,'m3')"><div class="snum">1</div><div class="sc"><strong>Abra nova aba e acesse</strong><p>🔵 <strong>Google</strong> &nbsp;📺 <strong>YouTube</strong> &nbsp;📧 <strong>Gmail</strong> &nbsp;🟠 <strong>UOL</strong></p></div></div>
       </div>
       <div class="sg">
-        <div class="sgt">📊 Passo 2 — Veja o resultado</div>
-        <div class="step" onclick="toggleStep(this,'m3')"><div class="snum">2</div><div class="sc"><strong>Analise o que aconteceu</strong>
-          <div class="cl ok" style="margin-top:.5rem"><span class="ci">✅</span><div>Abriu? Internet ok! Problema só no site. <strong>Aguarde e tente novamente.</strong></div></div>
+        <div class="sgt">📊 Passo 2 — Analise o resultado</div>
+        <div class="step" onclick="toggleStep(this,'m3')"><div class="snum">2</div><div class="sc"><strong>Veja o que aconteceu</strong>
+          <div class="cl ok" style="margin-top:.5rem"><span class="ci">✅</span><div>Abriu? Internet ok! Problema só no site. <strong>Aguarde e tente de novo.</strong></div></div>
           <div class="cl err" style="margin-top:.5rem"><span class="ci">❌</span><div>Não abriu? Problema na internet ou computador. Continue 👇</div></div>
         </div></div>
       </div>
@@ -563,39 +627,53 @@ footer strong{color:var(--purple)}
         <div class="sgt">📞 Passo 3 — Chamar suporte</div>
         <div class="step" onclick="toggleStep(this,'m3')"><div class="snum">3</div><div class="sc"><strong>Entre em contato com o SETEC da URE</strong><p>Um técnico vai verificar e resolver. 🔧</p></div></div>
       </div>
-      <div class="summ">
-        <h4>⚡ Resumo rápido</h4>
+      <div class="summ"><h4>⚡ Resumo rápido</h4>
         <div class="srow"><span>✅</span><div><strong>Google/YouTube abrem:</strong> Internet ok — problema só no site. Aguarde.</div></div>
         <div class="srow"><span>❌</span><div><strong>Google/YouTube não abrem:</strong> Problema na internet — ligue para o SETEC.</div></div>
       </div>
-      <div class="solve-wrap">
-        <button class="solve-btn" id="sb-m3" onclick="markSolved('m3')" aria-label="Marcar como resolvido">✅ Problema resolvido!</button>
-        <div class="cert-prompt" id="cp-m3">
-          <p>🎓 Parabéns! Digite seu nome para emitir o certificado de conclusão:</p>
-          <div class="cert-input-row">
-            <input type="text" id="ci-m3" placeholder="Seu nome completo..." aria-label="Nome para certificado" maxlength="60"/>
-            <button class="cert-dl-btn" onclick="generateCert('m3','Diagnóstico de Internet e Sites')">🏆 Gerar Certificado</button>
+      <div class="rating-wrap"><p>Este tutorial te ajudou?</p>
+        <div class="rating-btns">
+          <button class="rbtn bad" onclick="rate('m3','bad',this)">😕 Não ajudou</button>
+          <button class="rbtn mid" onclick="rate('m3','mid',this)">😐 Mais ou menos</button>
+          <button class="rbtn good" onclick="rate('m3','good',this)">😊 Resolveu!</button>
+        </div>
+        <div class="rating-fb" id="rf-m3"></div>
+      </div>
+      <div class="cert-zone" id="cz-m3">
+        <div class="czh"><span class="cz-icon" id="czicon-m3">🔒</span>
+          <div><div class="cz-title">🏆 Certificado de Conclusão</div><div class="cz-sub" id="czsub-m3">Conclua todos os passos para desbloquear</div></div>
+        </div>
+        <div class="czb">
+          <div class="cz-locked">
+            <p class="cz-hint">Marque todos os <strong>3 passos</strong> acima clicando em cada um ☝️</p>
+            <div class="cz-mini-track"><div class="cz-mini-fill" id="czfill-m3" style="width:0%"></div></div>
+            <button class="cz-lock-btn" disabled>🔒 Certificado bloqueado</button>
+          </div>
+          <div class="cz-unlocked">
+            <div class="cz-banner">🎉 Parabéns! Tutorial concluído — certificado desbloqueado!</div>
+            <p style="font-size:.85rem;color:var(--mu)">Digite seu nome para emitir:</p>
+            <div class="ci-row">
+              <input type="text" id="ci-m3" placeholder="Seu nome completo..." maxlength="60"/>
+              <button class="cert-gen-btn" onclick="generateCert('m3','Diagnóstico de Internet e Sites')">🏆 Gerar</button>
+            </div>
           </div>
         </div>
       </div>
-      <div class="not-resolved">
-        <div class="nr-header"><span>😕 Ainda não funcionou?</span></div>
-        <div class="nr-body">
-          <p>Se o problema persistir, entre em contato com o suporte técnico. 🔧</p>
-          <a class="nr-btn" href="mailto:setec@ure.edu.br">📞 Contatar SETEC da URE</a>
-        </div>
+      <div class="not-resolved"><div class="nr-hdr"><span>😕 Ainda não funcionou?</span></div>
+        <div class="nr-body"><p>Se o problema persistir, entre em contato com o suporte. 🔧</p>
+          <a class="nr-btn" href="mailto:setec@ure.edu.br">📞 Contatar SETEC da URE</a></div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- ====== CERT MODAL ====== -->
-<div class="cert-overlay" id="certOverlay" role="dialog" aria-modal="true" aria-label="Certificado de conclusão">
+<!-- CERT PREVIEW -->
+<div class="cert-overlay" id="certOverlay" role="dialog" aria-modal="true">
   <div class="cert-box">
     <canvas id="certCanvas" width="1040" height="740"></canvas>
-    <div class="cert-actions">
-      <p>⚠️ <strong>Este é um certificado simbólico de conclusão de tutorial.</strong> Não possui validade jurídica, educacional ou profissional, e não é emitido por instituição oficial.</p>
-      <div class="cert-actions-btns">
+    <div class="cert-acts">
+      <p>⚠️ <strong>Certificado simbólico de conclusão de tutorial.</strong> Não possui validade jurídica, educacional ou profissional. Não é emitido por instituição oficial.</p>
+      <div class="cert-acts-btns">
         <button class="cert-close-btn" onclick="closeCert()">Fechar</button>
         <button class="cert-save-btn" onclick="downloadCert()">⬇️ Baixar PNG</button>
       </div>
@@ -606,37 +684,42 @@ footer strong{color:var(--purple)}
 <script>
 /* ===== DATA ===== */
 const TUTORIALS=[
-  {id:'m1',emoji:'📶',title:'Verificar conexão de rede',desc:'Computador / Notebook • Rede SEDUC-MAQ',kw:'rede wi-fi conectado internet computador notebook seduc'},
-  {id:'m2',emoji:'📱',title:'Configurar Wi-Fi nos tablets',desc:'Tablets • Rede TABLETS-ESCOLAS • Mob Central',kw:'tablet wi-fi tablets-escolas configurar mob central sincronizar'},
+  {id:'m1',emoji:'📶',title:'Verificar conexão de rede',desc:'Computador / Notebook • SEDUC-MAQ',kw:'rede wi-fi conectado internet computador notebook seduc maq'},
+  {id:'m2',emoji:'📱',title:'Configurar Wi-Fi nos tablets',desc:'Tablets • TABLETS-ESCOLAS • Mob Central',kw:'tablet wi-fi tablets escolas configurar mob central sincronizar'},
   {id:'m3',emoji:'🌐',title:'Internet ou site com problema?',desc:'Diagnosticar • Google • YouTube • Site institucional',kw:'internet site problema erro lentidão abre google youtube'},
 ];
-const TOTAL_STEPS={m1:6,m2:7,m3:3};
-const stepState={m1:{done:new Set()},m2:{done:new Set()},m3:{done:new Set()}};
+const TOTAL={m1:6,m2:7,m3:3};
+const STATE={m1:{done:new Set()},m2:{done:new Set()},m3:{done:new Set()}};
+const AI_KB=[
+  {pat:['tablet','mob','escolas','tablets-escolas','sincroniz'],id:'m2',reply:'Parece que o tablet está com problema de conexão à rede escolar! O tutorial <strong>Configurar Wi-Fi nos Tablets</strong> vai te ajudar passo a passo.'},
+  {pat:['computador','notebook','seduc','seduc-maq','rede errada','wi-fi errado','pc'],id:'m1',reply:'Parece que o computador pode estar na rede errada! O tutorial <strong>Verificar Conexão de Rede</strong> vai te guiar para conectar na rede certa.'},
+  {pat:['site','institucional','não abre','erro','lentidão','lento','carrega','google','youtube'],id:'m3',reply:'Pode ser que o problema seja só naquele site! O tutorial <strong>Internet ou Site com Problema?</strong> ajuda a descobrir rapidinho.'},
+  {pat:['internet','sem internet','sem rede','offline'],id:'m3',reply:'Vamos descobrir se é a internet ou um site! O tutorial <strong>Internet ou Site com Problema?</strong> tem um diagnóstico simples.'},
+];
+const CHAT_SUGS_LIST=['Meu tablet não conecta','O site da escola não abre','Computador na rede errada','Sem internet no computador'];
+const RATE_MSGS={bad:'Obrigado! Vamos melhorar este tutorial 🙏',mid:'Entendido! Esperamos ter ajudado pelo menos um pouco 😊',good:'Que ótimo! Fico feliz que resolveu! 🎉'};
 
-/* ===== SKELETON → CARDS ===== */
+/* INIT */
 window.addEventListener('load',()=>{
   setTimeout(()=>{
-    document.getElementById('skeletonGrid').style.display='none';
+    document.getElementById('skelGrid').style.display='none';
     document.getElementById('grid').style.display='grid';
+    loadRecent();
   },900);
 });
+window.addEventListener('scroll',()=>document.getElementById('bttBtn').classList.toggle('show',window.scrollY>300));
 
-/* ===== BACK TO TOP ===== */
-window.addEventListener('scroll',()=>{
-  document.getElementById('bttBtn').classList.toggle('show',window.scrollY>300);
-});
-
-/* ===== THEME ===== */
+/* THEME */
 function toggleTheme(){
   const h=document.documentElement,dark=h.getAttribute('data-theme')==='dark';
   h.setAttribute('data-theme',dark?'light':'dark');
   document.getElementById('themeBtn').textContent=dark?'🌙':'☀️';
 }
 
-/* ===== A11Y ===== */
+/* A11Y */
 function toggleA11y(){
   const p=document.getElementById('a11yPanel'),b=document.getElementById('a11yBtn');
-  const o=p.classList.toggle('open');b.setAttribute('aria-expanded',o);
+  p.classList.toggle('open');b.setAttribute('aria-expanded',p.classList.contains('open'));
 }
 document.addEventListener('click',e=>{
   const p=document.getElementById('a11yPanel'),b=document.getElementById('a11yBtn');
@@ -649,84 +732,60 @@ function setFs(s){
   ['fN','fL','fX'].forEach(id=>document.getElementById(id).classList.remove('on'));
   document.getElementById(s==='normal'?'fN':s==='lg'?'fL':'fX').classList.add('on');
 }
-function toggleHC(){
-  const b=document.getElementById('ctog'),on=document.body.classList.toggle('hc');
-  b.classList.toggle('on',on);b.setAttribute('aria-pressed',on);
-}
+function toggleHC(){const b=document.getElementById('ctog'),on=document.body.classList.toggle('hc');b.classList.toggle('on',on);b.setAttribute('aria-pressed',on)}
 
-/* ===== TOAST ===== */
+/* TOAST */
 function showToast(msg){
-  const wrap=document.getElementById('toastWrap');
-  const t=document.createElement('div');
-  t.className='toast';t.textContent=msg;
-  wrap.appendChild(t);
-  setTimeout(()=>{t.classList.add('out');setTimeout(()=>t.remove(),320)},2200);
+  const w=document.getElementById('toastWrap');
+  const t=document.createElement('div');t.className='toast';t.textContent=msg;w.appendChild(t);
+  setTimeout(()=>{t.classList.add('out');setTimeout(()=>t.remove(),320)},2400);
 }
 
-/* ===== PROGRESS ===== */
-function toggleStep(el,mid){
-  const steps=Array.from(document.querySelectorAll(`#${mid} .step`));
-  const idx=steps.indexOf(el);
-  const state=stepState[mid];
-  if(state.done.has(idx)){state.done.delete(idx);el.classList.remove('checked');showToast('↩️ Passo desmarcado')}
-  else{state.done.add(idx);el.classList.add('checked');showToast(`✅ Passo ${idx+1} concluído!`)}
-  updateProgress(mid);
-}
-function updateProgress(mid){
-  const total=TOTAL_STEPS[mid];
-  const done=stepState[mid].done.size;
-  const pct=Math.round((done/total)*100);
-  document.getElementById(`pf-${mid}`).style.width=pct+'%';
-  document.getElementById(`pc-${mid}`).textContent=`${done} de ${total} passos`;
-  const dots=document.querySelectorAll(`#ps-${mid} .prog-dot`);
-  const perDot=total/dots.length;
-  dots.forEach((d,i)=>{
-    const threshold=Math.round((i+1)*perDot);
-    d.classList.remove('done','current');
-    if(done>=threshold)d.classList.add('done');
-    else if(done>=Math.round(i*perDot))d.classList.add('current');
-  });
+/* AI MATCH */
+function aiMatch(q){
+  q=q.toLowerCase();
+  for(const k of AI_KB){if(k.pat.some(p=>q.includes(p)))return k}
+  return null;
 }
 
-/* ===== SEARCH ===== */
-let sugFocus=-1,activeCat='all';
+/* SEARCH */
+let sugFocus=-1,activeCat='all',aiTarget=null;
 function onSearch(){
   const q=document.getElementById('searchInput').value.toLowerCase().trim();
-  const sug=document.getElementById('suggestions');
+  const sug=document.getElementById('sugs');
   filterCards(q,activeCat);
-  if(!q){sug.innerHTML='';sug.classList.remove('open');return}
-  const hits=TUTORIALS.filter(t=>(t.title+' '+t.kw+' '+t.desc).toLowerCase().includes(q));
+  if(!q){sug.innerHTML='';sug.classList.remove('open');hideBanner();return}
+  const hits=TUTORIALS.filter(t=>(t.title+' '+t.kw).toLowerCase().includes(q));
+  const ai=aiMatch(q);
+  if(ai&&q.length>3){showBanner(ai);aiTarget=ai.id}else hideBanner();
   if(!hits.length){sug.innerHTML='';sug.classList.remove('open');return}
-  sug.innerHTML=hits.map((t,i)=>`<div class="sug-item" role="option" tabindex="-1" onclick="openM('${t.id}');clearSug()" onmouseenter="sugFocus=${i}"><span class="sug-emoji">${t.emoji}</span><div class="sug-text"><strong>${t.title}</strong><span>${t.desc}</span></div><span class="sug-arrow">→</span></div>`).join('');
+  sug.innerHTML=hits.map(t=>`<div class="sug-item" role="option" tabindex="-1" onclick="openM('${t.id}');clearSug()"><span class="sug-emoji">${t.emoji}</span><div class="sug-text"><strong>${t.title}</strong><span>${t.desc}</span></div><span class="sug-arrow">→</span></div>`).join('');
   sug.classList.add('open');sugFocus=-1;
 }
+function showBanner(k){document.getElementById('aiBannerText').innerHTML=k.reply;document.getElementById('aiBannerBtn').onclick=()=>{openM(k.id);hideBanner()};document.getElementById('aiBanner').classList.add('show')}
+function hideBanner(){document.getElementById('aiBanner').classList.remove('show')}
+function searchEnter(e){if(e.key==='Enter'&&aiTarget){openM(aiTarget);hideBanner()}}
 function navSug(e){
-  const items=document.querySelectorAll('.sug-item');
-  if(!items.length)return;
+  const items=document.querySelectorAll('.sug-item');if(!items.length)return;
   if(e.key==='ArrowDown'){e.preventDefault();sugFocus=Math.min(sugFocus+1,items.length-1);items[sugFocus].focus()}
   if(e.key==='ArrowUp'){e.preventDefault();sugFocus=Math.max(sugFocus-1,0);items[sugFocus]?.focus()}
   if(e.key==='Escape')clearSug();
-  if(e.key==='Enter'&&sugFocus>=0)items[sugFocus].click();
 }
-function clearSug(){document.getElementById('suggestions').classList.remove('open')}
-function clearSearch(){document.getElementById('searchInput').value='';filterCards('',activeCat);clearSug();document.getElementById('searchInput').focus()}
+function clearSug(){document.getElementById('sugs').classList.remove('open')}
+function clearSearch(){document.getElementById('searchInput').value='';filterCards('',activeCat);clearSug();hideBanner();document.getElementById('searchInput').focus()}
 function quickSearch(q){document.getElementById('searchInput').value=q;onSearch();document.getElementById('searchInput').focus()}
 document.addEventListener('click',e=>{if(!e.target.closest('.search-outer'))clearSug()});
 
+/* FILTER */
 function filterCards(q,cat){
-  const cards=document.querySelectorAll('.card');
-  let vis=0;
+  const cards=document.querySelectorAll('.card');let vis=0;
   cards.forEach(c=>{
     const txt=(c.textContent+' '+(c.dataset.kw||'')).toLowerCase();
-    const catOk=cat==='all'||c.dataset.cat===cat;
-    const kwOk=!q||txt.includes(q);
-    const show=catOk&&kwOk;
-    c.classList.toggle('hidden',!show);
-    if(show)vis++;
+    const show=(cat==='all'||c.dataset.cat===cat)&&(!q||txt.includes(q));
+    c.classList.toggle('hidden',!show);if(show)vis++;
   });
-  document.getElementById('noRes').classList.toggle('show',vis===0);
-  const rc=document.getElementById('resultCount');
-  rc.innerHTML=(q||cat!=='all')?`<strong>${vis}</strong> tutorial${vis!==1?'is':''} encontrado${vis!==1?'s':''}`:''
+  document.getElementById('noRes').classList.toggle('show',vis===0&&(q.length>0||cat!=='all'));
+  document.getElementById('rcDiv').innerHTML=(q||cat!=='all')?`<strong>${vis}</strong> tutorial${vis!==1?'is':''} encontrado${vis!==1?'s':''}`:''
 }
 function filterCat(btn,cat){
   activeCat=cat;
@@ -735,19 +794,36 @@ function filterCat(btn,cat){
   filterCards(document.getElementById('searchInput').value.toLowerCase().trim(),cat);
 }
 
-/* ===== MODAL ===== */
+/* RECENTLY VIEWED */
+function saveRecent(id){try{let r=JSON.parse(localStorage.getItem('st_r')||'[]');r=r.filter(x=>x!==id);r.unshift(id);r=r.slice(0,3);localStorage.setItem('st_r',JSON.stringify(r))}catch(e){}}
+function saveSolved(id){try{let s=JSON.parse(localStorage.getItem('st_s')||'[]');if(!s.includes(id))s.push(id);localStorage.setItem('st_s',JSON.stringify(s))}catch(e){}}
+function loadRecent(){
+  try{
+    const r=JSON.parse(localStorage.getItem('st_r')||'[]');
+    const s=JSON.parse(localStorage.getItem('st_s')||'[]');
+    if(!r.length)return;
+    const sec=document.getElementById('recSec'),list=document.getElementById('recList');
+    list.innerHTML=r.map(id=>{
+      const t=TUTORIALS.find(x=>x.id===id);
+      return `<button class="rec-chip" onclick="openM('${id}')">${t.emoji} ${t.title}${s.includes(id)?'<span class="rc-check">✅</span>':''}</button>`;
+    }).join('');
+    sec.classList.add('show');
+  }catch(e){}
+}
+
+/* MODAL */
 let lastFocus=null;
 function openM(id){
   lastFocus=document.activeElement;
   document.getElementById(id).classList.add('open');
   document.body.style.overflow='hidden';
-  clearSug();
+  clearSug();saveRecent(id);
   setTimeout(()=>document.querySelector(`#${id} .mclose`).focus(),80);
 }
 function closeM(id){
   document.getElementById(id).classList.remove('open');
   document.body.style.overflow='';
-  lastFocus?.focus();
+  lastFocus?.focus();loadRecent();
 }
 function overlayClose(e,id){if(e.target===e.currentTarget)closeM(id)}
 function kOpen(e,id){if(e.key==='Enter'||e.key===' ')openM(id)}
@@ -757,228 +833,270 @@ document.addEventListener('keydown',e=>{
     if(document.getElementById('certOverlay').classList.contains('open'))closeCert();
   }
 });
-
-/* ===== PRINT ===== */
 function printModal(id){
   document.querySelectorAll('.overlay').forEach(o=>o.classList.remove('open'));
   document.getElementById(id).classList.add('open');
-  setTimeout(()=>{window.print();},200);
+  setTimeout(()=>window.print(),200);
 }
 
-/* ===== SOLVED ===== */
-function markSolved(mid){
-  const btn=document.getElementById(`sb-${mid}`);
-  if(btn.classList.contains('done'))return;
-  btn.classList.add('done');
-  btn.textContent='🎉 Ótimo! Fico feliz que resolveu!';
-  document.getElementById(`card-${mid}`).classList.add('just-solved');
-  document.getElementById(`cp-${mid}`).classList.add('show');
-  launchConfetti();
-  showToast('🎉 Tutorial concluído com sucesso!');
+/* STEPS + PROGRESS + CERT UNLOCK */
+function toggleStep(el,mid){
+  const steps=Array.from(document.querySelectorAll(`#${mid} .step`));
+  const idx=steps.indexOf(el);
+  const st=STATE[mid];
+  if(st.done.has(idx)){st.done.delete(idx);el.classList.remove('checked');showToast('↩️ Passo desmarcado')}
+  else{st.done.add(idx);el.classList.add('checked');showToast(`✅ Passo ${idx+1} concluído!`)}
+  updateProgress(mid);
+  checkUnlock(mid);
+}
+function updateProgress(mid){
+  const total=TOTAL[mid],done=STATE[mid].done.size;
+  const pct=Math.round((done/total)*100);
+  document.getElementById(`pf-${mid}`).style.width=pct+'%';
+  document.getElementById(`pc-${mid}`).textContent=`${done} de ${total} passos`;
+  const fill=document.getElementById(`czfill-${mid}`);if(fill)fill.style.width=pct+'%';
+  const dots=document.querySelectorAll(`#pd-${mid} .prog-dot`);
+  const perDot=total/dots.length;
+  dots.forEach((d,i)=>{
+    d.classList.remove('done','cur');
+    if(done>=Math.round((i+1)*perDot))d.classList.add('done');
+    else if(done>=Math.round(i*perDot))d.classList.add('cur');
+  });
+}
+function checkUnlock(mid){
+  const cz=document.getElementById(`cz-${mid}`);
+  const done=STATE[mid].done.size>=TOTAL[mid];
+  if(done&&!cz.classList.contains('unlocked')){
+    cz.classList.add('unlocked');
+    document.getElementById(`czicon-${mid}`).textContent='🏆';
+    document.getElementById(`czsub-${mid}`).textContent='Certificado disponível! Digite seu nome abaixo 👇';
+    launchConfetti();
+    showToast('🏆 Certificado desbloqueado!');
+    saveSolved(mid);
+    document.getElementById(`card-${mid}`).classList.add('just-solved');
+  }else if(!done){
+    cz.classList.remove('unlocked');
+    document.getElementById(`czicon-${mid}`).textContent='🔒';
+    document.getElementById(`czsub-${mid}`).textContent='Conclua todos os passos para desbloquear';
+  }
 }
 
-/* ===== CONFETTI ===== */
+/* RATING */
+function rate(mid,type,btn){
+  document.querySelectorAll(`#${mid} .rbtn`).forEach(b=>b.classList.remove('sel'));
+  btn.classList.add('sel');
+  document.getElementById(`rf-${mid}`).textContent=RATE_MSGS[type];
+}
+
+/* CONFETTI */
 function launchConfetti(){
-  const c=document.getElementById('confetti');
+  const c=document.getElementById('confWrap');
   const cols=['#7C3AED','#A78BFA','#D97706','#F59E0B','#059669','#F472B6','#60A5FA'];
-  for(let i=0;i<70;i++){
-    const el=document.createElement('div');
-    el.className='conf';
+  for(let i=0;i<80;i++){
+    const el=document.createElement('div');el.className='conf';
     const s=Math.random()*11+5;
     el.style.cssText=`left:${Math.random()*100}%;width:${s}px;height:${s}px;background:${cols[Math.floor(Math.random()*cols.length)]};border-radius:${Math.random()>.5?'50%':'3px'};animation-duration:${Math.random()*1.6+.9}s;animation-delay:${Math.random()*.5}s;top:-20px`;
     c.appendChild(el);
   }
-  setTimeout(()=>c.innerHTML='',3000);
+  setTimeout(()=>c.innerHTML='',3500);
 }
 
-/* ===== CERTIFICATE ===== */
-function generateCert(mid,tutorialName){
-  const nameInput=document.getElementById(`ci-${mid}`);
-  const name=nameInput.value.trim();
-  if(!name){nameInput.focus();showToast('⚠️ Digite seu nome para gerar o certificado!');return}
-
-  const canvas=document.getElementById('certCanvas');
-  const ctx=canvas.getContext('2d');
-  const W=canvas.width, H=canvas.height;
-
-  // Background gradient
-  const bgGrad=ctx.createLinearGradient(0,0,W,H);
-  bgGrad.addColorStop(0,'#F5F0FF');
-  bgGrad.addColorStop(0.5,'#EDE9FE');
-  bgGrad.addColorStop(1,'#FDF4E7');
-  ctx.fillStyle=bgGrad;
-  ctx.fillRect(0,0,W,H);
-
-  // Decorative corner fills
-  const corners=[
-    {x:0,y:0},{x:W,y:0},{x:0,y:H},{x:W,y:H}
-  ];
-  corners.forEach(({x,y})=>{
+/* CERTIFICATE */
+function generateCert(mid,name_tut){
+  const inp=document.getElementById(`ci-${mid}`);
+  const name=inp.value.trim();
+  if(!name){inp.focus();showToast('⚠️ Digite seu nome!');return}
+  const canvas=document.getElementById('certCanvas'),ctx=canvas.getContext('2d');
+  const W=canvas.width,H=canvas.height;
+  // Background
+  const bg=ctx.createLinearGradient(0,0,W,H);
+  bg.addColorStop(0,'#F5F0FF');bg.addColorStop(.5,'#EDE9FE');bg.addColorStop(1,'#FDF4E7');
+  ctx.fillStyle=bg;ctx.fillRect(0,0,W,H);
+  [[0,0],[W,0],[0,H],[W,H]].forEach(([x,y])=>{
     const cg=ctx.createRadialGradient(x,y,0,x,y,280);
-    cg.addColorStop(0,'rgba(124,58,237,0.12)');
-    cg.addColorStop(1,'transparent');
-    ctx.fillStyle=cg;
-    ctx.fillRect(0,0,W,H);
+    cg.addColorStop(0,'rgba(124,58,237,0.12)');cg.addColorStop(1,'transparent');
+    ctx.fillStyle=cg;ctx.fillRect(0,0,W,H);
   });
-
-  // Outer border — double line
-  ctx.strokeStyle='#7C3AED';
-  ctx.lineWidth=6;
-  ctx.strokeRect(22,22,W-44,H-44);
-  ctx.strokeStyle='#D97706';
-  ctx.lineWidth=2;
-  ctx.strokeRect(34,34,W-68,H-68);
-
+  // Borders
+  ctx.strokeStyle='#7C3AED';ctx.lineWidth=6;ctx.strokeRect(22,22,W-44,H-44);
+  ctx.strokeStyle='#D97706';ctx.lineWidth=2;ctx.strokeRect(34,34,W-68,H-68);
   // Corner ornaments
-  function drawCornerOrnament(cx,cy,flip){
-    ctx.save();
-    ctx.translate(cx,cy);
-    if(flip==='tr')ctx.scale(-1,1);
-    if(flip==='bl')ctx.scale(1,-1);
-    if(flip==='br')ctx.scale(-1,-1);
+  function corner(cx,cy,sx,sy){
+    ctx.save();ctx.translate(cx,cy);ctx.scale(sx,sy);
     ctx.strokeStyle='#7C3AED';ctx.lineWidth=2;
     ctx.beginPath();ctx.moveTo(0,50);ctx.lineTo(0,0);ctx.lineTo(50,0);ctx.stroke();
     ctx.strokeStyle='#D97706';ctx.lineWidth=1.5;
     ctx.beginPath();ctx.arc(0,0,30,0,Math.PI/2);ctx.stroke();
     ctx.beginPath();ctx.arc(0,0,20,0,Math.PI/2);ctx.stroke();
-    // small diamond
     ctx.fillStyle='#7C3AED';
     ctx.beginPath();ctx.moveTo(55,0);ctx.lineTo(62,7);ctx.lineTo(55,14);ctx.lineTo(48,7);ctx.closePath();ctx.fill();
     ctx.restore();
   }
-  drawCornerOrnament(34,34,'tl');
-  drawCornerOrnament(W-34,34,'tr');
-  drawCornerOrnament(34,H-34,'bl');
-  drawCornerOrnament(W-34,H-34,'br');
-
-  // Horizontal ornamental dividers
-  function drawDivider(y){
+  corner(34,34,1,1);corner(W-34,34,-1,1);corner(34,H-34,1,-1);corner(W-34,H-34,-1,-1);
+  // Dividers
+  function divider(y){
     ctx.strokeStyle='#7C3AED';ctx.lineWidth=1;
     ctx.beginPath();ctx.moveTo(80,y);ctx.lineTo(W-80,y);ctx.stroke();
-    ctx.fillStyle='#D97706';
-    [W/2-60,W/2,W/2+60].forEach(x=>{
-      ctx.beginPath();ctx.arc(x,y,4,0,Math.PI*2);ctx.fill();
-    });
-    ctx.fillStyle='#7C3AED';
-    [W/2-30,W/2+30].forEach(x=>{
-      ctx.beginPath();ctx.arc(x,y,2.5,0,Math.PI*2);ctx.fill();
-    });
+    [W/2-60,W/2,W/2+60].forEach(x=>{ctx.fillStyle='#D97706';ctx.beginPath();ctx.arc(x,y,4,0,Math.PI*2);ctx.fill()});
+    [W/2-30,W/2+30].forEach(x=>{ctx.fillStyle='#7C3AED';ctx.beginPath();ctx.arc(x,y,2.5,0,Math.PI*2);ctx.fill()});
   }
-  drawDivider(130);
-  drawDivider(H-130);
-
-  // Top institution label
+  divider(130);divider(H-130);
+  // Texts
   ctx.textAlign='center';
-  ctx.fillStyle='#6B5F8A';
-  ctx.font='600 15px "Sora", sans-serif';
-  ctx.letterSpacing='4px';
-  ctx.fillText('SUPORTE TECH ESCOLAR — SEDUC', W/2, 90);
-  ctx.letterSpacing='0px';
-
-  // Big CERTIFICADO title
-  ctx.fillStyle='#3B0764';
-  ctx.font='bold 68px "Cinzel", serif';
-  ctx.fillText('CERTIFICADO', W/2, 210);
-
-  // Subtitle
-  ctx.font='italic 26px "Cormorant Garamond", serif';
-  ctx.fillStyle='#7C3AED';
-  ctx.fillText('de Conclusão de Tutorial', W/2, 250);
-
-  // "Certificamos que" text
-  ctx.font='22px "Cormorant Garamond", serif';
-  ctx.fillStyle='#4A3870';
-  ctx.fillText('Certificamos que', W/2, 310);
-
-  // Name
-  ctx.font='bold 52px "Cinzel", serif';
-  const nameGrad=ctx.createLinearGradient(W/2-200,0,W/2+200,0);
-  nameGrad.addColorStop(0,'#7C3AED');
-  nameGrad.addColorStop(1,'#D97706');
-  ctx.fillStyle=nameGrad;
-  ctx.fillText(name, W/2, 378);
-
-  // Underline under name
-  const nameWidth=ctx.measureText(name).width;
+  ctx.fillStyle='#6B5F8A';ctx.font='600 15px Sora,sans-serif';
+  ctx.fillText('SUPORTE TECH ESCOLAR — SEDUC',W/2,90);
+  ctx.fillStyle='#3B0764';ctx.font='bold 68px Cinzel,serif';
+  ctx.fillText('CERTIFICADO',W/2,210);
+  ctx.font='italic 26px "Cormorant Garamond",serif';ctx.fillStyle='#7C3AED';
+  ctx.fillText('de Conclusão de Tutorial',W/2,250);
+  ctx.font='22px "Cormorant Garamond",serif';ctx.fillStyle='#4A3870';
+  ctx.fillText('Certificamos que',W/2,310);
+  // Name gradient
+  ctx.font='bold 52px Cinzel,serif';
+  const ng=ctx.createLinearGradient(W/2-200,0,W/2+200,0);
+  ng.addColorStop(0,'#7C3AED');ng.addColorStop(1,'#D97706');
+  ctx.fillStyle=ng;ctx.fillText(name,W/2,378);
+  const nw=ctx.measureText(name).width;
   ctx.strokeStyle='#D97706';ctx.lineWidth=1.5;
-  ctx.beginPath();ctx.moveTo(W/2-nameWidth/2,388);ctx.lineTo(W/2+nameWidth/2,388);ctx.stroke();
-
-  // Body text
-  ctx.font='italic 22px "Cormorant Garamond", serif';
-  ctx.fillStyle='#4A3870';
-  ctx.fillText('concluiu com êxito o tutorial de', W/2, 425);
-
-  // Tutorial name highlight box
-  const tName=tutorialName.toUpperCase();
-  ctx.font='bold 24px "Cinzel", serif';
-  const tW=ctx.measureText(tName).width;
-  const bx=W/2-tW/2-20, by=440, bw=tW+40, bh=42;
-  const boxGrad=ctx.createLinearGradient(bx,by,bx+bw,by);
-  boxGrad.addColorStop(0,'rgba(124,58,237,0.12)');
-  boxGrad.addColorStop(1,'rgba(217,119,6,0.12)');
-  ctx.fillStyle=boxGrad;
-  ctx.beginPath();ctx.roundRect(bx,by,bw,bh,8);ctx.fill();
-  ctx.strokeStyle='#A78BFA';ctx.lineWidth=1.5;
-  ctx.beginPath();ctx.roundRect(bx,by,bw,bh,8);ctx.stroke();
-  ctx.fillStyle='#3B0764';
-  ctx.fillText(tName, W/2, 469);
-
+  ctx.beginPath();ctx.moveTo(W/2-nw/2,388);ctx.lineTo(W/2+nw/2,388);ctx.stroke();
+  ctx.font='italic 22px "Cormorant Garamond",serif';ctx.fillStyle='#4A3870';
+  ctx.fillText('concluiu com êxito o tutorial de',W/2,425);
+  // Tutorial name box
+  const tN=name_tut.toUpperCase();
+  ctx.font='bold 24px Cinzel,serif';
+  const tW=ctx.measureText(tN).width;
+  const bx=W/2-tW/2-20,by=440,bw=tW+40,bh=42;
+  const bg2=ctx.createLinearGradient(bx,by,bx+bw,by);
+  bg2.addColorStop(0,'rgba(124,58,237,0.12)');bg2.addColorStop(1,'rgba(217,119,6,0.12)');
+  ctx.fillStyle=bg2;ctx.beginPath();ctx.roundRect(bx,by,bw,bh,8);ctx.fill();
+  ctx.strokeStyle='#A78BFA';ctx.lineWidth=1.5;ctx.beginPath();ctx.roundRect(bx,by,bw,bh,8);ctx.stroke();
+  ctx.fillStyle='#3B0764';ctx.fillText(tN,W/2,469);
   // Date
-  const today=new Date();
-  const dateStr=today.toLocaleDateString('pt-BR',{day:'2-digit',month:'long',year:'numeric'});
-  ctx.font='18px "Cormorant Garamond", serif';
-  ctx.fillStyle='#6B5F8A';
-  ctx.fillText(`Emitido em ${dateStr}`, W/2, 540);
-
-  // Signature line left
+  const dateStr=new Date().toLocaleDateString('pt-BR',{day:'2-digit',month:'long',year:'numeric'});
+  ctx.font='18px "Cormorant Garamond",serif';ctx.fillStyle='#6B5F8A';
+  ctx.fillText(`Emitido em ${dateStr}`,W/2,540);
+  // Signatures
   ctx.strokeStyle='#A78BFA';ctx.lineWidth=1;
   ctx.beginPath();ctx.moveTo(120,620);ctx.lineTo(380,620);ctx.stroke();
-  ctx.font='italic 15px "Cormorant Garamond", serif';
-  ctx.fillStyle='#6B5F8A';
-  ctx.fillText('Equipe de Suporte Técnico', 250, 640);
-  ctx.font='bold 13px "Sora", sans-serif';
-  ctx.fillStyle='#A99DC5';
-  ctx.fillText('SETEC — URE', 250, 658);
-
-  // Signature line right
-  ctx.strokeStyle='#A78BFA';ctx.lineWidth=1;
+  ctx.font='italic 15px "Cormorant Garamond",serif';ctx.fillStyle='#6B5F8A';
+  ctx.fillText('Equipe de Suporte Técnico',250,640);
+  ctx.font='bold 13px Sora,sans-serif';ctx.fillStyle='#A99DC5';ctx.fillText('SETEC — URE',250,658);
   ctx.beginPath();ctx.moveTo(W-380,620);ctx.lineTo(W-120,620);ctx.stroke();
-  ctx.font='italic 15px "Cormorant Garamond", serif';
-  ctx.fillStyle='#6B5F8A';
-  ctx.fillText('Unidade Escolar', W-250, 640);
-  ctx.font='bold 13px "Sora", sans-serif';
-  ctx.fillStyle='#A99DC5';
-  ctx.fillText('SEDUC', W-250, 658);
-
-  // Seal circle center
-  const sealy=620;
-  ctx.strokeStyle='#7C3AED';ctx.lineWidth=2;
-  ctx.beginPath();ctx.arc(W/2,sealy,38,0,Math.PI*2);ctx.stroke();
-  ctx.strokeStyle='#D97706';ctx.lineWidth=1;
-  ctx.beginPath();ctx.arc(W/2,sealy,31,0,Math.PI*2);ctx.stroke();
-  ctx.font='bold 22px "Cinzel", serif';
-  ctx.fillStyle='#7C3AED';
-  ctx.fillText('✓', W/2, sealy+8);
-
-  // Bottom disclaimer
-  ctx.font='11px "DM Sans", sans-serif';
-  ctx.fillStyle='#B0A0CC';
-  ctx.fillText('⚠  Este é um certificado simbólico de conclusão de tutorial. Não possui validade jurídica, educacional ou profissional.', W/2, H-48);
-
-  // Show cert modal
+  ctx.font='italic 15px "Cormorant Garamond",serif';ctx.fillStyle='#6B5F8A';
+  ctx.fillText('Unidade Escolar',W-250,640);
+  ctx.font='bold 13px Sora,sans-serif';ctx.fillStyle='#A99DC5';ctx.fillText('SEDUC',W-250,658);
+  // Seal
+  ctx.strokeStyle='#7C3AED';ctx.lineWidth=2;ctx.beginPath();ctx.arc(W/2,620,38,0,Math.PI*2);ctx.stroke();
+  ctx.strokeStyle='#D97706';ctx.lineWidth=1;ctx.beginPath();ctx.arc(W/2,620,31,0,Math.PI*2);ctx.stroke();
+  ctx.font='bold 22px Cinzel,serif';ctx.fillStyle='#7C3AED';ctx.fillText('✓',W/2,628);
+  // Disclaimer
+  ctx.font='11px "DM Sans",sans-serif';ctx.fillStyle='#B0A0CC';
+  ctx.fillText('⚠  Certificado simbólico de conclusão de tutorial. Não possui validade jurídica, educacional ou profissional.',W/2,H-48);
   document.getElementById('certOverlay').classList.add('open');
 }
-
-function closeCert(){
-  document.getElementById('certOverlay').classList.remove('open');
-}
+function closeCert(){document.getElementById('certOverlay').classList.remove('open')}
 function downloadCert(){
-  const canvas=document.getElementById('certCanvas');
-  const a=document.createElement('a');
-  a.download='certificado-suporte-tech.png';
-  a.href=canvas.toDataURL('image/png',1.0);
-  a.click();
+  const a=document.createElement('a');a.download='certificado-suporte-tech.png';
+  a.href=document.getElementById('certCanvas').toDataURL('image/png',1.0);a.click();
   showToast('⬇️ Certificado salvo!');
+}
+
+/* AI CHAT */
+const CHAT_SYS=`Você é "Assistente Tech", um suporte técnico amigável para escolas SEDUC em São José dos Campos, SP. Fale de forma simples para usuários leigos (professores, funcionários). Você conhece 3 tutoriais: 1) "Verificar conexão de rede" (id:m1) - computadores/notebooks na rede SEDUC-MAQ. 2) "Configurar Wi-Fi nos tablets" (id:m2) - tablets na rede TABLETS-ESCOLAS via Mob Central. 3) "Internet ou site com problema?" (id:m3) - diagnosticar se o problema é na internet ou num site. Quando identificar o problema, termine sua resposta com [TUTORIAL:id]. Seja breve (máx 3 frases), use emojis e linguagem simples.`;
+let chatOpen=false,chatHist=[],chatTyping=false;
+
+function toggleChat(){
+  chatOpen=!chatOpen;
+  document.getElementById('chatPanel').classList.toggle('open',chatOpen);
+  document.getElementById('chatFab').querySelector('.notif').style.display=chatOpen?'none':'block';
+  if(chatOpen&&!chatHist.length){
+    setTimeout(()=>addBotMsg('Olá! 👋 Sou o Assistente Tech da escola. Me conta qual problema você está tendo!'),350);
+    setTimeout(()=>showChatSugs(),900);
+  }
+  if(chatOpen)setTimeout(()=>document.getElementById('chatInput').focus(),200);
+}
+function addBotMsg(text){
+  const msgs=document.getElementById('chatMsgs');
+  const d=document.createElement('div');d.className='chat-msg bot';d.innerHTML=text;msgs.appendChild(d);
+  msgs.scrollTop=msgs.scrollHeight;
+  chatHist.push({role:'assistant',content:text});
+}
+function addUserMsg(text){
+  const msgs=document.getElementById('chatMsgs');
+  const d=document.createElement('div');d.className='chat-msg user';d.textContent=text;msgs.appendChild(d);
+  msgs.scrollTop=msgs.scrollHeight;
+}
+function showTyping(){
+  const msgs=document.getElementById('chatMsgs');
+  const d=document.createElement('div');d.className='chat-msg typing';d.id='typingDot';
+  d.innerHTML='<div class="tdots"><span></span><span></span><span></span></div>';
+  msgs.appendChild(d);msgs.scrollTop=msgs.scrollHeight;
+}
+function hideTyping(){const d=document.getElementById('typingDot');if(d)d.remove()}
+function showChatSugs(){
+  const s=document.getElementById('chatSugs');
+  s.innerHTML=CHAT_SUGS_LIST.map(t=>`<button class="csug" onclick="sendChatMsg('${t}')">${t}</button>`).join('');
+}
+function chatEnter(e){if(e.key==='Enter')sendChat()}
+function sendChat(){
+  const inp=document.getElementById('chatInput');
+  const text=inp.value.trim();
+  if(!text||chatTyping)return;
+  inp.value='';sendChatMsg(text);
+}
+async function sendChatMsg(text){
+  document.getElementById('chatSugs').innerHTML='';
+  addUserMsg(text);
+  chatHist.push({role:'user',content:text});
+  chatTyping=true;showTyping();
+  try{
+    const res=await fetch('https://api.anthropic.com/v1/messages',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({
+        model:'claude-sonnet-4-6',max_tokens:1000,
+        system:CHAT_SYS,
+        messages:chatHist.filter(m=>m.role==='user'||m.role==='assistant')
+      })
+    });
+    const data=await res.json();
+    hideTyping();chatTyping=false;
+    const raw=data?.content?.[0]?.text||'';
+    const tag=raw.match(/\[TUTORIAL:(m\d)\]/);
+    const clean=raw.replace(/\[TUTORIAL:m\d\]/g,'').trim();
+    addBotMsg(clean);
+    if(tag){
+      const tid=tag[1],tut=TUTORIALS.find(t=>t.id===tid);
+      setTimeout(()=>{
+        const msgs=document.getElementById('chatMsgs');
+        const btn=document.createElement('button');
+        btn.className='csug';
+        btn.style.cssText='margin:.4rem auto;display:block;background:var(--gr);color:#fff;border-color:transparent;padding:6px 16px;font-weight:700';
+        btn.textContent=`📖 Abrir: ${tut?.title||'Tutorial'}`;
+        btn.onclick=()=>{openM(tid);toggleChat()};
+        msgs.appendChild(btn);msgs.scrollTop=msgs.scrollHeight;
+      },300);
+    }
+  }catch(err){
+    hideTyping();chatTyping=false;
+    const match=aiMatch(text);
+    if(match){
+      addBotMsg(match.reply);
+      chatHist.push({role:'assistant',content:match.reply});
+      setTimeout(()=>{
+        const msgs=document.getElementById('chatMsgs');
+        const btn=document.createElement('button');
+        btn.className='csug';btn.style.margin='.3rem auto';btn.style.display='block';
+        btn.textContent='📖 Abrir tutorial';
+        btn.onclick=()=>{openM(match.id);toggleChat()};
+        msgs.appendChild(btn);msgs.scrollTop=msgs.scrollHeight;
+      },300);
+    }else{
+      const fb='Hmm, tente descrever melhor 🤔 Ex: <em>"meu tablet não conecta"</em> ou <em>"o site não abre"</em>.';
+      addBotMsg(fb);chatHist.push({role:'assistant',content:fb});
+      setTimeout(()=>showChatSugs(),400);
+    }
+  }
 }
 </script>
 </body>
